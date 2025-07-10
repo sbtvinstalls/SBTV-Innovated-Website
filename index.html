@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SB TV Mount IQ Quiz</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #1c1e21;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .quiz-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+            color: #000;
+            margin-bottom: 10px;
+        }
+        p.subtitle {
+            text-align: center;
+            color: #606770;
+            margin-bottom: 30px;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .question label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .option {
+            background-color: #f0f2f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .option:hover {
+            background-color: #e4e6eb;
+        }
+        .option input[type="radio"] {
+            display: none;
+        }
+        .option span {
+            font-size: 16px;
+        }
+        input[type="radio"]:checked + .option {
+            background-color: #1877f2;
+            color: #ffffff;
+            box-shadow: 0 2px 4px rgba(24, 119, 242, 0.4);
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1>SB TV Mount IQ Quiz</h1>
+        <p class="subtitle">Answer 4 simple questions to get an instant recommendation and help us prepare your quote.</p>
+
+        <form id="tvQuiz">
+            <div class="question">
+                <label for="wallType">What type of wall will the TV be mounted on?</label>
+                <input type="radio" name="wallType" id="wallDrywall" value="Drywall" required>
+                <label for="wallDrywall" class="option"><span>Drywall</span></label>
+
+                <input type="radio" name="wallType" id="wallPlaster" value="Plaster">
+                <label for="wallPlaster" class="option"><span>Plaster</span></label>
+
+                <input type="radio" name="wallType" id="wallBrick" value="Brick / Concrete">
+                <label for="wallBrick" class="option"><span>Brick / Concrete</span></label>
+
+                <input type="radio" name="wallType" id="wallFireplace" value="Above a Fireplace">
+                <label for="wallFireplace" class="option"><span>Above a Fireplace</span></label>
+            </div>
+
+            <div class="question">
+                <label for="tvSize">What is the approximate size of your TV?</label>
+                <input type="radio" name="tvSize" id="sizeSmall" value="Under 55 inches" required>
+                <label for="sizeSmall" class="option"><span>Under 55"</span></label>
+
+                <input type="radio" name="tvSize" id="sizeMedium" value="55 to 75 inches">
+                <label for="sizeMedium" class="option"><span>55" - 75"</span></label>
+
+                <input type="radio" name="tvSize" id="sizeLarge" value="Over 75 inches">
+                <label for="sizeLarge" class="option"><span>Over 75"</span></label>
+            </div>
+
+            <div class="question">
+                <label for="mountType">What kind of mount are you considering?</label>
+                <input type="radio" name="mountType" id="mountFixed" value="Fixed (Low Profile)" required>
+                <label for="mountFixed" class="option"><span>Fixed (Low Profile)</span></label>
+
+                <input type="radio" name="mountType" id="mountTilting" value="Tilting">
+                <label for="mountTilting" class="option"><span>Tilting</span></label>
+
+                <input type="radio" name="mountType" id="mountFull" value="Full-Motion (Articulating)">
+                <label for="mountFull" class="option"><span>Full-Motion (Articulating)</span></label>
+            </div>
+
+            <div class="question">
+                <label for="hideCables">Will you need cables hidden in the wall?</label>
+                <input type="radio" name="hideCables" id="cablesYes" value="Yes" required>
+                <label for="cablesYes" class="option"><span>Yes</span></label>
+
+                <input type="radio" name="hideCables" id="cablesNo" value="No">
+                <label for="cablesNo" class="option"><span>No</span></label>
+            </div>
+
+            <button type="submit">Request Installation Quote</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('tvQuiz').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const wallType = document.querySelector('input[name="wallType"]:checked').value;
+            const tvSize = document.querySelector('input[name="tvSize"]:checked').value;
+            const mountType = document.querySelector('input[name="mountType"]:checked').value;
+            const hideCables = document.querySelector('input[name="hideCables"]:checked').value;
+
+            const subject = "New TV Mount IQ Quiz Lead";
+            const body = `A new lead has submitted the TV Mount IQ Quiz.\n\nPlease contact them to provide a full quote.\n\n--- QUIZ ANSWERS ---\n\n1. Wall Type: ${wallType}\n2. TV Size: ${tvSize}\n3. Mount Type: ${mountType}\n4. Hide Cables: ${hideCables}\n`;
+
+            const mailtoLink = `mailto:sbtvinstallations@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailtoLink;
+        });
+    </script>
+
+</body>
+</html>
