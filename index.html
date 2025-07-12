@@ -3,161 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SB TV Mount IQ Quiz</title>
+    <title>SBTV Mount Quiz & Services</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f0f2f5;
-            color: #1c1e21;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            background: #f6f9fb;
+            color: #222;
+        }
+        header {
+            background: #24292e;
+            color: #fff;
+            padding: 0.5rem 0;
+            position: sticky; top: 0;
+            z-index: 10;
+        }
+        nav {
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            gap: 2rem;
         }
-        .quiz-container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 100%;
-            box-sizing: border-box;
+        nav a {
+            color: #fff;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.2s;
         }
-        h1 {
-            text-align: center;
-            color: #000;
-            margin-bottom: 10px;
+        nav a:hover, nav a.active {
+            background: #0366d6;
         }
-        p.subtitle {
-            text-align: center;
-            color: #606770;
-            margin-bottom: 30px;
+        main {
+            max-width: 720px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 24px rgba(36,41,46,0.09);
+            padding: 2rem 1.5rem;
         }
-        .question {
-            margin-bottom: 25px;
+        h1, h2 {
+            color: #1a232c;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
         }
-        .question label {
-            font-weight: 600;
+        .section {
+            margin-bottom: 3rem;
+        }
+        .quiz-form label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 0.2em;
+            font-weight: 500;
         }
-        .option {
-            background-color: #f0f2f5;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            cursor: pointer;
-            transition: background-color 0.2s ease, box-shadow 0.2s ease;
-        }
-        .option:hover {
-            background-color: #e4e6eb;
-        }
-        .option input[type="radio"] {
-            display: none;
-        }
-        .option span {
-            font-size: 16px;
-        }
-        input[type="radio"]:checked + .option {
-            background-color: #1877f2;
-            color: #ffffff;
-            box-shadow: 0 2px 4px rgba(24, 119, 242, 0.4);
-        }
-        button[type="submit"] {
+        .quiz-form input[type="text"],
+        .quiz-form input[type="email"],
+        .quiz-form input[type="tel"] {
             width: 100%;
-            padding: 15px;
-            font-size: 18px;
-            font-weight: 700;
-            color: #ffffff;
-            background-color: #28a745;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
+            padding: 10px;
+            margin-bottom: 0.8em;
+            border: 1px solid #ccd6df;
+            border-radius: 4px;
+            font-size: 1em;
         }
-        button[type="submit"]:hover {
-            background-color: #218838;
+        .quiz-form .question {
+            margin-bottom: 1.3em;
+        }
+        .quiz-form .option-group {
+            margin: 0.4em 0 0.8em 0.5em;
+        }
+        .quiz-form .option-group label {
+            display: inline-block;
+            margin-right: 1.5em;
+            font-weight: 400;
+        }
+        .quiz-form button {
+            background: #0366d6;
+            color: #fff;
+            font-size: 1.08em;
+            border: none;
+            padding: 0.7em 2.2em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .quiz-form button:hover {
+            background: #0250ab;
+        }
+        .privacy-note {
+            font-size: 0.97em;
+            color: #555;
+            margin-bottom: 1.2em;
+        }
+        @media (max-width: 600px) {
+            main { padding: 1rem 0.3rem; }
+            nav { gap: 0.8rem; }
+        }
+        .success-message {
+            background: #e6ffed;
+            color: #22863a;
+            border: 1px solid #b7ebc4;
+            padding: 0.9em 1em;
+            border-radius: 5px;
+            margin-bottom: 1.2em;
         }
     </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="#quiz-section">SBTV Mount Quiz</a>
+            <a href="#services-section">Services</a>
+            <a href="#about-section">About</a>
+            <a href="#privacy-policy-section">Privacy Policy</a>
+        </nav>
+    </header>
+    <main>
+        <!-- SBTV Mount Quiz Section -->
+        <section id="quiz-section" class="section">
+            <h1>SBTV Mount Quiz</h1>
+            <p>Answer 4 simple questions and get an installation quote. We’ll also recommend the best mount for your TV and wall.</p>
+            <form class="quiz-form" id="tvQuiz" action="https://formspree.io/f/xyzjraer" method="POST">
+                <div class="question">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="question">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="question">
+                    <label for="phone">Phone *</label>
+                    <input type="tel" id="phone" name="phone" required pattern="[0-9+\-\s()]{7,}">
+                </div>
 
-    <div class="quiz-container">
-        <h1>SB TV Mount IQ Quiz</h1>
-        <p class="subtitle">Answer 4 simple questions to get an instant recommendation and help us prepare your quote.</p>
+                <div class="question">
+                    <label>What type of wall will the TV be mounted on? *</label>
+                    <div class="option-group">
+                        <label><input type="radio" name="wallType" value="Drywall" required> Drywall</label>
+                        <label><input type="radio" name="wallType" value="Plaster"> Plaster</label>
+                        <label><input type="radio" name="wallType" value="Brick/Concrete"> Brick/Concrete</label>
+                        <label><input type="radio" name="wallType" value="Above Fireplace"> Above Fireplace</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>What is the approximate size of your TV? *</label>
+                    <div class="option-group">
+                        <label><input type="radio" name="tvSize" value="Under 55 inches" required> Under 55"</label>
+                        <label><input type="radio" name="tvSize" value="55-75 inches"> 55"-75"</label>
+                        <label><input type="radio" name="tvSize" value="Over 75 inches"> Over 75"</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>What kind of mount are you considering? *</label>
+                    <div class="option-group">
+                        <label><input type="radio" name="mountType" value="Fixed" required> Fixed (Low Profile)</label>
+                        <label><input type="radio" name="mountType" value="Tilting"> Tilting</label>
+                        <label><input type="radio" name="mountType" value="Full-Motion"> Full-Motion (Articulating)</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>Will you need cables hidden in the wall? *</label>
+                    <div class="option-group">
+                        <label><input type="radio" name="hideCables" value="Yes" required> Yes</label>
+                        <label><input type="radio" name="hideCables" value="No"> No</label>
+                    </div>
+                </div>
+                <div class="privacy-note">
+                    By submitting, you agree to our <a href="#privacy-policy-section">privacy policy</a>. Your information will only be used to contact you regarding your quote.
+                </div>
+                <button type="submit">Request Installation Quote</button>
+                <div id="form-success" class="success-message" style="display:none;">Thank you! Your request has been received.</div>
+            </form>
+        </section>
 
-        <form id="tvQuiz">
-            <div class="question">
-                <label for="wallType">What type of wall will the TV be mounted on?</label>
-                <input type="radio" name="wallType" id="wallDrywall" value="Drywall" required>
-                <label for="wallDrywall" class="option"><span>Drywall</span></label>
+        <!-- Services Section -->
+        <section id="services-section" class="section">
+            <h2>Our Services</h2>
+            <ul>
+                <li><b>TV Wall Mounting:</b> Professional installation for all TV sizes and types of walls, including drywall, plaster, brick, and above fireplaces.</li>
+                <li><b>Home Theater Setup:</b> Soundbar and surround sound setup, cable management, and equipment integration.</li>
+                <li><b>Cable Concealment:</b> In-wall and on-wall solutions to keep your space tidy and cable-free.</li>
+                <li><b>Custom Mount Solutions:</b> Articulating, tilting, and low-profile mounting options tailored to your needs.</li>
+                <li><b>Commercial Installations:</b> Office, lobby, and retail TV mounting and display solutions.</li>
+            </ul>
+        </section>
 
-                <input type="radio" name="wallType" id="wallPlaster" value="Plaster">
-                <label for="wallPlaster" class="option"><span>Plaster</span></label>
+        <!-- About Section -->
+        <section id="about-section" class="section">
+            <h2>About SBTV Installs</h2>
+            <p>
+                SBTV Installs is dedicated to providing you with fast, reliable, and professional TV mounting services. With years of experience and hundreds of happy customers, our technicians ensure your TV is mounted safely and looks great in your space. We serve both residential and commercial clients and are committed to top-tier customer service.
+            </p>
+        </section>
 
-                <input type="radio" name="wallType" id="wallBrick" value="Brick / Concrete">
-                <label for="wallBrick" class="option"><span>Brick / Concrete</span></label>
-
-                <input type="radio" name="wallType" id="wallFireplace" value="Above a Fireplace">
-                <label for="wallFireplace" class="option"><span>Above a Fireplace</span></label>
-            </div>
-
-            <div class="question">
-                <label for="tvSize">What is the approximate size of your TV?</label>
-                <input type="radio" name="tvSize" id="sizeSmall" value="Under 55 inches" required>
-                <label for="sizeSmall" class="option"><span>Under 55"</span></label>
-
-                <input type="radio" name="tvSize" id="sizeMedium" value="55 to 75 inches">
-                <label for="sizeMedium" class="option"><span>55" - 75"</span></label>
-
-                <input type="radio" name="tvSize" id="sizeLarge" value="Over 75 inches">
-                <label for="sizeLarge" class="option"><span>Over 75"</span></label>
-            </div>
-
-            <div class="question">
-                <label for="mountType">What kind of mount are you considering?</label>
-                <input type="radio" name="mountType" id="mountFixed" value="Fixed (Low Profile)" required>
-                <label for="mountFixed" class="option"><span>Fixed (Low Profile)</span></label>
-
-                <input type="radio" name="mountType" id="mountTilting" value="Tilting">
-                <label for="mountTilting" class="option"><span>Tilting</span></label>
-
-                <input type="radio" name="mountType" id="mountFull" value="Full-Motion (Articulating)">
-                <label for="mountFull" class="option"><span>Full-Motion (Articulating)</span></label>
-            </div>
-
-            <div class="question">
-                <label for="hideCables">Will you need cables hidden in the wall?</label>
-                <input type="radio" name="hideCables" id="cablesYes" value="Yes" required>
-                <label for="cablesYes" class="option"><span>Yes</span></label>
-
-                <input type="radio" name="hideCables" id="cablesNo" value="No">
-                <label for="cablesNo" class="option"><span>No</span></label>
-            </div>
-
-            <button type="submit">Request Installation Quote</button>
-        </form>
-    </div>
-
+        <!-- Privacy Policy Section -->
+        <section id="privacy-policy-section" class="section">
+            <h2>Privacy Policy</h2>
+            <p>
+                <b>What information do we collect?</b>
+                <br>
+                We collect your name, email, phone number, and quiz answers when you fill out our quote request form.
+            </p>
+            <p>
+                <b>How do we use your information?</b>
+                <br>
+                Your information is used solely to respond to your quote request and to provide recommendations or follow-up for your installation.
+            </p>
+            <p>
+                <b>Will you share my information?</b>
+                <br>
+                No. Your information will never be sold or shared with third parties.
+            </p>
+            <p>
+                <b>How can I request deletion of my data?</b>
+                <br>
+                Contact us at <a href="mailto:sbtvinstallations@gmail.com">sbtvinstallations@gmail.com</a> to request removal of your data from our records.
+            </p>
+        </section>
+    </main>
     <script>
-        document.getElementById('tvQuiz').addEventListener('submit', function(event) {
-            event.preventDefault();
+        // Highlight nav based on scroll
+        const navLinks = document.querySelectorAll('nav a');
+        window.addEventListener('scroll', () => {
+            let pos = window.scrollY + 100;
+            navLinks.forEach(link => {
+                let section = document.querySelector(link.getAttribute('href'));
+                if (section.offsetTop <= pos && section.offsetTop + section.offsetHeight > pos) {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
 
-            const wallType = document.querySelector('input[name="wallType"]:checked').value;
-            const tvSize = document.querySelector('input[name="tvSize"]:checked').value;
-            const mountType = document.querySelector('input[name="mountType"]:checked').value;
-            const hideCables = document.querySelector('input[name="hideCables"]:checked').value;
-
-            const subject = "New TV Mount IQ Quiz Lead";
-            const body = `A new lead has submitted the TV Mount IQ Quiz.\n\nPlease contact them to provide a full quote.\n\n--- QUIZ ANSWERS ---\n\n1. Wall Type: ${wallType}\n2. TV Size: ${tvSize}\n3. Mount Type: ${mountType}\n4. Hide Cables: ${hideCables}\n`;
-
-            const mailtoLink = `mailto:sbtvinstallations@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            window.location.href = mailtoLink;
+        // Simple Formspree AJAX success message
+        const form = document.getElementById('tvQuiz');
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            const action = form.getAttribute('action');
+            const response = await fetch(action, {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            if (response.ok) {
+                form.reset();
+                document.getElementById('form-success').style.display = 'block';
+            } else {
+                alert('There was a problem submitting your request. Please try again later.');
+            }
         });
     </script>
-
 </body>
 </html>
