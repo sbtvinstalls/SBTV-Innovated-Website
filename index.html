@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Improvement: Updated Title Tag -->
     <title>Expert TV Installer in Moreno Valley & Inland Empire | SBTV Installs</title>
+    <!-- SEO Improvement: Added Meta Description -->
     <meta name="description" content="5-star rated TV mounting and home theater installation in Moreno Valley, CA. We offer same-day service, professional wire concealment, and soundbar mounting. Get your free quote!">
+    
+    <!-- Existing custom styles -->
     <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
@@ -107,20 +111,89 @@
             border-radius: 5px;
             margin-bottom: 1.2em;
         }
+
+        /* Tailwind CSS CDN for styling the modal */
+        /* Note: This is included via script tag below, but custom modal styles are here */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 0.75rem; /* rounded-lg */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-xl */
+            max-width: 90%;
+            width: 400px;
+            text-align: center;
+            position: relative;
+        }
+        .close-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+        /* General button style for consistency */
+        .button {
+            display: inline-block;
+            background-color: #0366d6; /* Matches existing button color */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0250ab; /* Matches existing button hover */
+        }
+        /* Specific styles for the new section's button */
+        #ai-tools .button {
+            background-color: #8B5CF6; /* Purple color for AI section */
+        }
+        #ai-tools .button:hover {
+            background-color: #7C3AED; /* Darker purple on hover */
+        }
+        /* Styles for the link after form submission */
+        #guideLinkContainer .button {
+            background-color: #10B981; /* Green for success link */
+        }
+        #guideLinkContainer .button:hover {
+            background-color: #059669; /* Darker green on hover */
+        }
     </style>
+    <!-- Tailwind CSS CDN for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="font-sans">
     <header>
         <nav>
             <a href="#quiz-section">Get a Quote</a>
             <a href="#services-section">Services</a>
             <a href="#about-section">About</a>
             <a href="#privacy-policy-section">Privacy Policy</a>
+            <!-- New AI Content Link -->
+            <a href="#ai-tools">AI for Small Business</a>
         </nav>
     </header>
     <main>
         <section id="quiz-section" class="section">
+            <!-- SEO Improvement: Updated Main Heading -->
             <h1>Expert TV Mounting in Moreno Valley</h1>
+            <!-- SEO Improvement: Enhanced Intro Paragraph -->
             <p>Here at SBTV Installs, we provide fast and reliable TV mounting across Moreno Valley and all of Riverside County. From simple TV hanging to full home theater setups, our professional installers can handle any job. Use our quick quiz below to get an instant quote and recommendations for the best mount for your TV and wall!</p>
             
             <h2>SBTV Mount Quiz - Get Your Free Quote!</h2>
@@ -198,6 +271,21 @@
             </ul>
         </section>
 
+        <!-- NEW SECTION: AI for Small Business -->
+        <section id="ai-tools" class="section bg-purple-50 rounded-lg shadow-md p-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Boost Your Small Business with AI: The Gemini 2.5 Content Guide</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Discover how Artificial Intelligence, powered by Gemini 2.5, can revolutionize your small business's content creation and marketing. This comprehensive guide will show you how to generate ideas, craft compelling copy, and streamline your operations for growth.</p>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Gain exclusive access to our curated list of free AI tools and resources specifically chosen to help small businesses like yours enhance their online presence, improve marketing, and drive customer engagement. From social media content to local SEO strategies, AI can be your secret weapon.</p>
+            <button id="openGuideModal" class="button">Get Your Free Guide & Access Tools!</button>
+            
+            <div id="guideLinkContainer" class="mt-6 p-4 bg-green-100 text-green-800 rounded-lg hidden max-w-md mx-auto">
+                <p class="mb-2">Thank you! Here's your link to the guide:</p>
+                <!-- IMPORTANT: Replace this URL with the actual link to your hosted Gemini Guide (e.g., Google Drive, or a dedicated HTML page on your GitHub Pages) -->
+                <a href="https://your-domain.com/free-gemini-guide.html" target="_blank" class="button">Download Your Guide Now!</a>
+            </div>
+        </section>
+        <!-- END NEW SECTION -->
+
         <section id="about-section" class="section">
             <h2>About SBTV Installs</h2>
             <p>
@@ -229,42 +317,173 @@
             </p>
         </section>
     </main>
-    <script>
-        // Highlight nav based on scroll
-        const navLinks = document.querySelectorAll('nav a');
-        window.addEventListener('scroll', () => {
-            let pos = window.scrollY + 100;
-            navLinks.forEach(link => {
-                let section = document.querySelector(link.getAttribute('href'));
-                if (section.offsetTop <= pos && section.offsetTop + section.offsetHeight > pos) {
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-        });
 
-        // Simple Formspree AJAX success message
-        const form = document.getElementById('tvQuiz');
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const data = new FormData(form);
-            const action = form.getAttribute('action');
-            const response = await fetch(action, {
-                method: 'POST',
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
+    <!-- Email Capture Modal -->
+    <div id="emailCaptureModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="close-button" id="closeModal">&times;</button>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Get Your Free AI Content Guide!</h3>
+            <p class="text-gray-600 mb-6">Enter your email to unlock the guide and access our exclusive AI tools.</p>
+            <!-- Formspree Integration: IMPORTANT - Replace YOUR_NEW_FORMSPREE_GUIDE_FORM_ID with your actual Formspree ID -->
+            <form id="emailForm" action="https://formspree.io/f/myzpgzvy" method="POST" class="flex flex-col gap-4">
+                <div>
+                    <input type="text" id="name" name="name" placeholder="Your Name (Optional)" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <button type="submit" class="button bg-blue-600 hover:bg-blue-700">Send Me The Guide!</button>
+            </form>
+            <div id="formMessage" class="mt-4 text-green-600 hidden"></div>
+        </div>
+    </div>
+
+    <script>
+        // Ensure the DOM is fully loaded before running scripts that interact with elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Highlight nav based on scroll
+            const navLinks = document.querySelectorAll('nav a');
+            window.addEventListener('scroll', () => {
+                let pos = window.scrollY + 100;
+                navLinks.forEach(link => {
+                    let section = document.querySelector(link.getAttribute('href'));
+                    if (section && section.offsetTop <= pos && section.offsetTop + section.offsetHeight > pos) {
+                        navLinks.forEach(l => l.classList.remove('active'));
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
             });
-            if (response.ok) {
-                form.reset();
-                document.getElementById('form-success').style.display = 'block';
-            } else {
-                alert('There was a problem submitting your request. Please try again later.');
+
+            // Existing Quiz Formspree AJAX success message (id="tvQuiz")
+            const tvQuizForm = document.getElementById('tvQuiz');
+            if (tvQuizForm) { // Add a check to ensure the element exists
+                tvQuizForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const data = new FormData(tvQuizForm);
+                    const action = tvQuizForm.getAttribute('action');
+                    const response = await fetch(action, {
+                        method: 'POST',
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    if (response.ok) {
+                        tvQuizForm.reset();
+                        const formSuccess = document.getElementById('form-success');
+                        if (formSuccess) {
+                            formSuccess.style.display = 'block';
+                            // Hide success message after a few seconds
+                            setTimeout(() => {
+                                formSuccess.style.display = 'none';
+                            }, 5000);
+                        }
+                    } else {
+                        // Replaced alert() with a simple message display
+                        const formSuccess = document.getElementById('form-success');
+                        if (formSuccess) {
+                            formSuccess.textContent = 'There was a problem submitting your quote request. Please try again later.';
+                            formSuccess.style.backgroundColor = '#ffe6e6'; // Light red background
+                            formSuccess.style.color = '#cc0000'; // Dark red text
+                            formSuccess.style.display = 'block';
+                            setTimeout(() => {
+                                formSuccess.style.display = 'none';
+                                formSuccess.style.backgroundColor = ''; // Reset background
+                                formSuccess.style.color = ''; // Reset color
+                            }, 5000);
+                        }
+                    }
+                });
             }
-        });
+
+
+            // Email Capture Modal Logic (for the new AI guide form - id="emailForm")
+            const openGuideModalButton = document.getElementById('openGuideModal');
+            const emailCaptureModal = document.getElementById('emailCaptureModal');
+            const closeModalButton = document.getElementById('closeModal');
+            const emailForm = document.getElementById('emailForm'); // This is the new form
+            const formMessage = document.getElementById('formMessage');
+            const guideLinkContainer = document.getElementById('guideLinkContainer');
+
+            if (openGuideModalButton) { // Add a check to ensure the element exists
+                openGuideModalButton.addEventListener('click', () => {
+                    if (emailCaptureModal) emailCaptureModal.classList.remove('hidden');
+                    if (emailForm) {
+                        emailForm.reset();
+                        emailForm.classList.remove('hidden'); // Ensure form is visible
+                    }
+                    if (formMessage) formMessage.classList.add('hidden');
+                    if (guideLinkContainer) guideLinkContainer.classList.add('hidden'); // Hide link until form is submitted
+                });
+            }
+
+            if (closeModalButton) { // Add a check
+                closeModalButton.addEventListener('click', () => {
+                    if (emailCaptureModal) emailCaptureModal.classList.add('hidden');
+                });
+            }
+
+            // Close modal if clicking outside the content
+            if (emailCaptureModal) { // Add a check
+                emailCaptureModal.addEventListener('click', (event) => {
+                    if (event.target === emailCaptureModal) {
+                        emailCaptureModal.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Formspree submission handling for the new email capture form (id="emailForm")
+            if (emailForm) { // Add a check
+                emailForm.addEventListener('submit', async function(event) {
+                    event.preventDefault(); // Prevent default browser form submission
+
+                    const form = event.target;
+                    const formData = new FormData(form);
+
+                    try {
+                        const response = await fetch(form.action, {
+                            method: form.method,
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            if (formMessage) {
+                                formMessage.textContent = 'Thank you for signing up!';
+                                formMessage.classList.remove('hidden');
+                            }
+                            if (emailForm) emailForm.classList.add('hidden'); // Hide the form
+                            
+                            // Show the guide link after a short delay
+                            setTimeout(() => {
+                                if (emailCaptureModal) emailCaptureModal.classList.add('hidden'); // Close the modal
+                                if (guideLinkContainer) guideLinkContainer.classList.remove('hidden'); // Show the link on the page
+                            }, 1000); // 1 second delay
+                        } else {
+                            const data = await response.json();
+                            if (formMessage) {
+                                if (Object.hasOwnProperty.call(data, 'errors')) {
+                                    formMessage.textContent = data["errors"].map(error => error["message"]).join(", ");
+                                } else {
+                                    formMessage.textContent = 'Oops! There was a problem submitting your form.';
+                                }
+                                formMessage.classList.remove('hidden');
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Network error:', error);
+                        if (formMessage) {
+                            formMessage.textContent = 'Network error. Please try again.';
+                            formMessage.classList.remove('hidden');
+                        }
+                    }
+                });
+            }
+        }); // End DOMContentLoaded
     </script>
 </body>
 </html>
