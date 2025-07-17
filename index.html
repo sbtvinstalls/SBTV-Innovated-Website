@@ -25,7 +25,7 @@
             padding-left: 1.5rem; /* Add some padding on the left */
             padding-right: 1.5rem; /* Add some padding on the right */
         }
-        header.phone-number {
+        header .phone-number { /* Corrected selector */
             color: #fff;
             font-weight: 600;
             text-decoration: none;
@@ -36,7 +36,7 @@
             background-color: #0366d6; /* Match CTA color */
             transition: background-color 0.2s, border-color 0.2s;
         }
-        header.phone-number:hover {
+        header .phone-number:hover { /* Corrected selector */
             background-color: #0250ab;
             border-color: #0250ab;
         }
@@ -86,14 +86,15 @@
             border: 1px solid #ccd6df;
             border-radius: 4px;
             font-size: 1em;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
         }
-       .quiz-form.question {
+       .quiz-form .question { /* Corrected selector */
             margin-bottom: 1.3em;
         }
-       .quiz-form.option-group {
+       .quiz-form .option-group { /* Corrected selector */
             margin: 0.4em 0 0.8em 0.5em;
         }
-       .quiz-form.option-group label {
+       .quiz-form .option-group label { /* Corrected selector */
             display: inline-block;
             margin-right: 1.5em;
             font-weight: 400;
@@ -117,14 +118,14 @@
             margin-bottom: 1.2em;
         }
         @media (max-width: 600px) {
-            main { padding: 1rem 0.3rem; }
+            main { padding: 1rem 0.8rem; } /* Increased padding slightly */
             nav { gap: 0.8rem; }
             header {
                 flex-direction: column; /* Stack items vertically on small screens */
-                padding: 0.5rem 0;
+                padding: 0.8rem 0;
             }
-            header.phone-number {
-                margin-bottom: 0.5rem; /* Add space below phone number */
+            header .phone-number { /* Corrected selector */
+                margin-bottom: 0.8rem; /* Add space below phone number */
             }
         }
        .success-message {
@@ -133,7 +134,7 @@
             border: 1px solid #b7ebc4;
             padding: 0.9em 1em;
             border-radius: 5px;
-            margin-top: 1.2em; /* Adjusted margin-bottom to margin-top */
+            margin-top: 1.2em;
             display: none; /* Hidden by default */
         }
        .trust-signal {
@@ -145,9 +146,10 @@
         }
     </style>
 </head>
-<body class="font-sans">
+<body>
     <header>
-        <a href="tel:+19515551234" class="phone-number">(951) 555-1234</a> <nav>
+        <a href="tel:+19515551234" class="phone-number">(951) 555-1234</a>
+        <nav>
             <a href="#quiz-section">Get a Quote</a>
             <a href="#services-section">Services</a>
             <a href="#about-section">About</a>
@@ -157,9 +159,11 @@
     <main>
         <section id="quiz-section" class="section">
             <h1>Expert TV Mounting in Moreno Valley</h1>
-            <p class="trust-signal">5-Star Rated Installations Across Inland Empire</p> <p>Here at SBTV Installs, we provide fast and reliable TV mounting across Moreno Valley and all of Riverside County. From simple TV hanging to full home theater setups, our professional installers can handle any job. Use our quick quiz below to get an instant quote and recommendations for the best mount for your TV and wall!</p>
+            <p class="trust-signal">5-Star Rated Installations Across Inland Empire</p>
+            <p>Here at SBTV Installs, we provide fast and reliable TV mounting across Moreno Valley and all of Riverside County. From simple TV hanging to full home theater setups, our professional installers can handle any job. Use our quick quiz below to get an instant quote and recommendations for the best mount for your TV and wall!</p>
 
             <h2>SBTV Mount Quiz - Get Your Free Quote!</h2>
+            <!-- The form action is updated to your Formspree URL -->
             <form class="quiz-form" id="tvQuiz" action="https://formspree.io/f/xyzjraer" method="POST">
                 <div class="question">
                     <label for="name">Name *</label>
@@ -271,18 +275,25 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Highlight nav based on scroll
             const navLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('main .section');
+
             window.addEventListener('scroll', () => {
-                let pos = window.scrollY + 100;
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 60) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
                 navLinks.forEach(link => {
-                    let section = document.querySelector(link.getAttribute('href'));
-                    if (section && section.offsetTop <= pos && section.offsetTop + section.offsetHeight > pos) {
-                        navLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
                         link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
                     }
                 });
             });
+
 
             // Existing Quiz Formspree AJAX success message (id="tvQuiz")
             const tvQuizForm = document.getElementById('tvQuiz');
@@ -291,7 +302,7 @@
                     e.preventDefault();
                     const data = new FormData(tvQuizForm);
                     const action = tvQuizForm.getAttribute('action');
-                    const formSuccess = document.getElementById('form-success'); // Get the success message element
+                    const formSuccess = document.getElementById('form-success');
 
                     try {
                         const response = await fetch(action, {
@@ -323,8 +334,6 @@
                                 formSuccess.style.display = 'block';
                                 setTimeout(() => {
                                     formSuccess.style.display = 'none';
-                                    formSuccess.style.backgroundColor = ''; // Reset background
-                                    formSuccess.style.color = ''; // Reset color
                                 }, 5000);
                             }
                         }
@@ -337,8 +346,6 @@
                             formSuccess.style.display = 'block';
                             setTimeout(() => {
                                 formSuccess.style.display = 'none';
-                                formSuccess.style.backgroundColor = ''; // Reset background
-                                formSuccess.style.color = ''; // Reset color
                             }, 5000);
                         }
                     }
@@ -348,3 +355,4 @@
     </script>
 </body>
 </html>
+
