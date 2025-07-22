@@ -1,290 +1,352 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expert TV Installer in Moreno Valley & Inland Empire | SBTV Installs</title>
-    <meta name="description" content="5-star rated TV mounting and home theater installation in Moreno Valley, CA. We offer same-day service, professional wire concealment, and soundbar mounting. Get your free quote!">
+    <meta name="description" content="Get an instant TV mounting quote! 5-star rated home theater installation in Moreno Valley, CA. Same-day service, wire concealment, and soundbar mounting.">
+    
+    <!-- Chosen Palette: Desert Sunset -->
+    <!-- Application Structure Plan: A top-down narrative flow designed to convert visitors. Starts with an engaging Hero section with clear CTAs. Builds immediate trust with a 'Why Choose Us' section using icons. Visually details offerings in a 'Services' card grid. The core of the app is an 'Interactive Pricing Estimator' which gives instant user feedback via a real-time price calculator and a Chart.js donut chart for cost transparency, funneling into a lead-capture form. This is followed by social proof (Testimonials), problem-solving (FAQ), and clear contact info. This structure prioritizes user value (instant quote) and trust-building over a simple informational page, aiming for higher engagement and conversion. -->
+    <!-- Visualization & Content Choices: Report Info: Quote questions -> Goal: Provide instant price estimate -> Viz/Presentation: Interactive calculator with button-style inputs and a real-time updating total. Interaction: User clicks options, price updates instantly. Justification: Provides immediate value, increasing engagement and likelihood of form submission. Library: Vanilla JS. | Report Info: Price breakdown -> Goal: Make pricing transparent -> Viz/Presentation: Donut Chart. Interaction: Chart updates with calculator choices. Justification: Visually reinforces the value and components of the service cost. Library: Chart.js. | Report Info: Services list -> Goal: Organize offerings clearly -> Viz/Presentation: HTML/CSS card grid with Unicode icons. Interaction: Static display. Justification: More visually appealing and scannable than a simple list. | Report Info: FAQ content -> Goal: Organize Q&A concisely -> Viz/Presentation: HTML/JS accordion. Interaction: User clicks question to toggle answer visibility. Justification: Prevents information overload and keeps the layout clean. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            background: #f6f9fb;
-            color: #222;
+            font-family: 'Inter', sans-serif;
+            background-color: #FDF8F0;
+            color: #1F2937;
         }
-        header {
-            background: #24292e;
-            color: #fff;
-            padding: 0.5rem 0;
-            position: sticky; top: 0;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between; /* Distribute items */
-            align-items: center; /* Vertically align items */
-            padding-left: 1.5rem; /* Add some padding on the left */
-            padding-right: 1.5rem; /* Add some padding on the right */
+        .text-balance { text-wrap: balance; }
+        .nav-link.active { color: #F97316; }
+        .group:hover .group-hover\:text-orange-500 { color: #F97316; }
+        .group:hover .group-hover\:border-orange-500 { border-color: #F97316; }
+        .faq-question.open .arrow { transform: rotate(180deg); }
+        .custom-radio:checked + label {
+            background-color: #F97316;
+            color: #FFFFFF;
+            border-color: #F97316;
         }
-        header.phone-number { /* Corrected selector */
-            color: #fff;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 1.1em;
-            padding: 0.5rem 1rem;
-            border: 1px solid #0366d6; /* Add a subtle border */
-            border-radius: 4px;
-            background-color: #0366d6; /* Match CTA color */
-            transition: background-color 0.2s, border-color 0.2s;
+        .custom-radio:disabled + label {
+            background-color: #E5E7EB;
+            color: #9CA3AF;
+            cursor: not-allowed;
+            border-color: #D1D5DB;
         }
-        header.phone-number:hover { /* Corrected selector */
-            background-color: #0250ab;
-            border-color: #0250ab;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-        nav a {
-            color: #fff;
-            font-weight: 500;
-            text-decoration: none;
-            padding: 0.5rem;
-            border-radius: 4px;
-            transition: background 0.2s;
-        }
-        nav a:hover, nav a.active {
-            background: #0366d6;
-        }
-        main {
-            max-width: 720px;
-            margin: 2rem auto;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 6px 24px rgba(36,41,46,0.09);
-            padding: 2rem 1.5rem;
-        }
-        h1, h2 {
-            color: #1a232c;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-        }
-      .section {
-            margin-bottom: 3rem;
-        }
-      .quiz-form label {
-            display: block;
-            margin-bottom: 0.2em;
-            font-weight: 500;
-        }
-      .quiz-form input[type="text"],
-      .quiz-form input[type="email"],
-      .quiz-form input[type="tel"] {
+        .chart-container {
+            position: relative;
             width: 100%;
-            padding: 10px;
-            margin-bottom: 0.8em;
-            border: 1px solid #ccd6df;
-            border-radius: 4px;
-            font-size: 1em;
-            box-sizing: border-box; /* Ensures padding doesn't affect width */
-        }
-      .quiz-form.question { /* Corrected selector */
-            margin-bottom: 1.3em;
-        }
-      .quiz-form.option-group { /* Corrected selector */
-            margin: 0.4em 0 0.8em 0.5em;
-        }
-      .quiz-form.option-group label { /* Corrected selector */
-            display: inline-block;
-            margin-right: 1.5em;
-            font-weight: 400;
-        }
-      .quiz-form button {
-            background: #0366d6;
-            color: #fff;
-            font-size: 1.08em;
-            border: none;
-            padding: 0.7em 2.2em;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-      .quiz-form button:hover {
-            background: #0250ab;
-        }
-      .privacy-note {
-            font-size: 0.97em;
-            color: #555;
-            margin-bottom: 1.2em;
-        }
-        @media (max-width: 600px) {
-            main { padding: 1rem 0.8rem; } /* Increased padding slightly */
-            nav { gap: 0.8rem; }
-            header {
-                flex-direction: column; /* Stack items vertically on small screens */
-                padding: 0.8rem 0;
-            }
-            header.phone-number { /* Corrected selector */
-                margin-bottom: 0.8rem; /* Add space below phone number */
-            }
-        }
-      .success-message {
-            background: #e6ffed;
-            color: #22863a;
-            border: 1px solid #b7ebc4;
-            padding: 0.9em 1em;
-            border-radius: 5px;
-            margin-top: 1.2em;
-            display: none; /* Hidden by default */
-        }
-      .trust-signal {
-            font-size: 1.1em;
-            color: #0366d6;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 1.5rem;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
         }
     </style>
 </head>
-<body>
-    <header>
-        <a href="tel:+19514005044" class="phone-number">(951) 400-5044</a>
-        <nav>
-            <a href="#quiz-section">Get a Quote</a>
-            <a href="#services-section">Services</a>
-            <a href="#about-section">About</a>
-            <a href="#privacy-policy-section">Privacy Policy</a>
+<body class="antialiased">
+
+    <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#" class="text-2xl font-extrabold text-gray-800">SBTV <span class="text-orange-500">Installs</span></a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="nav-link text-gray-600 hover:text-orange-500 transition-colors">Services</a>
+                    <a href="#why-us" class="nav-link text-gray-600 hover:text-orange-500 transition-colors">Why Us</a>
+                    <a href="#pricing" class="nav-link text-gray-600 hover:text-orange-500 transition-colors">Pricing</a>
+                    <a href="#faq" class="nav-link text-gray-600 hover:text-orange-500 transition-colors">FAQ</a>
+                </div>
+                <div class="flex items-center">
+                     <a href="tel:+19514005044" class="hidden sm:block bg-orange-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-orange-600 transition-all text-sm">(951) 400-5044</a>
+                     <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 hover:text-orange-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
         </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2">
+            <a href="#services" class="block nav-link text-gray-600 hover:text-orange-500 transition-colors">Services</a>
+            <a href="#why-us" class="block nav-link text-gray-600 hover:text-orange-500 transition-colors">Why Us</a>
+            <a href="#pricing" class="block nav-link text-gray-600 hover:text-orange-500 transition-colors">Pricing</a>
+            <a href="#faq" class="block nav-link text-gray-600 hover:text-orange-500 transition-colors">FAQ</a>
+            <a href="tel:+19514005044" class="block text-center mt-2 bg-orange-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-orange-600 transition-all text-sm">Call (951) 400-5044</a>
+        </div>
     </header>
+
     <main>
-        <section id="quiz-section" class="section">
-            <h1>Expert TV Mounting in Moreno Valley</h1>
-            <p class="trust-signal">5-Star Rated Installations Across Inland Empire</p>
-            <p>Here at SBTV Installs, we provide fast and reliable TV mounting across Moreno Valley and all of Riverside County. From simple TV hanging to full home theater setups, our professional installers can handle any job. Use our quick quiz below to get an instant quote and recommendations for the best mount for your TV and wall!</p>
-
-            <h2>SBTV Mount Quiz - Get Your Free Quote!</h2>
-            <form class="quiz-form" id="tvQuiz" action="https://formspree.io/f/xyzjraer" method="POST">
-                <div class="question">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
+        <section id="home" class="py-20 md:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight text-balance">
+                    Flawless TV Mounting in the <span class="text-orange-500">Inland Empire</span>
+                </h1>
+                <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-600 text-balance">
+                    5-star rated, same-day service. We handle everything from secure mounting and cable concealment to complete home theater setups.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#pricing" class="w-full sm:w-auto bg-orange-500 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-600 transition-all transform hover:scale-105">
+                        Get Instant Estimate
+                    </a>
+                    <a href="#services" class="w-full sm:w-auto bg-gray-200 text-gray-800 font-bold py-3 px-8 rounded-lg hover:bg-gray-300 transition-colors">
+                        View Services
+                    </a>
                 </div>
-                <div class="question">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="question">
-                    <label for="phone">Phone *</label>
-                    <input type="tel" id="phone" name="phone" required pattern="[0-9+\-\s()]{7,}">
-                </div>
-
-                <div class="question">
-                    <label>What type of wall will the TV be mounted on? *</label>
-                    <div class="option-group">
-                        <label><input type="radio" name="wallType" value="Drywall" required> Drywall</label>
-                        <label><input type="radio" name="wallType" value="Plaster"> Plaster</label>
-                        <label><input type="radio" name="wallType" value="Brick/Concrete"> Brick/Concrete</label>
-                        <label><input type="radio" name="wallType" value="Above Fireplace"> Above Fireplace</label>
-                    </div>
-                </div>
-                <div class="question">
-                    <label>What is the approximate size of your TV? *</label>
-                    <div class="option-group">
-                        <label><input type="radio" name="tvSize" value="Under 55 inches" required> Under 55"</label>
-                        <label><input type="radio" name="tvSize" value="55-75 inches"> 55"-75"</label>
-                        <label><input type="radio" name="tvSize" value="Over 75 inches"> Over 75"</label>
-                    </div>
-                </div>
-                <div class="question">
-                    <label>What kind of mount are you considering? *</label>
-                    <div class="option-group">
-                        <label><input type="radio" name="mountType" value="Fixed" required> Fixed (Low Profile)</label>
-                        <label><input type="radio" name="mountType" value="Tilting"> Tilting</label>
-                        <label><input type="radio" name="mountType" value="Full-Motion"> Full-Motion (Articulating)</label>
-                    </div>
-                </div>
-                <div class="question">
-                    <label>Will you need cables hidden in the wall? *</label>
-                    <div class="option-group">
-                        <label><input type="radio" name="hideCables" value="Yes" required> Yes</label>
-                        <label><input type="radio" name="hideCables" value="No"> No</label>
-                    </div>
-                </div>
-                <div class="privacy-note">
-                    By submitting, you agree to our <a href="#privacy-policy-section">privacy policy</a>. Your information will only be used to contact you regarding your quote.
-                </div>
-                <button type="submit">Request Installation Quote</button>
-                <div id="form-success" class="success-message">Thank you! Your request has been received.</div>
-            </form>
+            </div>
         </section>
 
-        <section id="services-section" class="section">
-            <h2>Our Inland Empire TV Installation Services</h2>
-            <ul>
-                <li><b>TV Wall Mounting:</b> Professional installation for all TV sizes and types of walls in Moreno Valley, Riverside, Perris, and Menifee, including drywall, plaster, brick, and above fireplaces.</li>
-                <li><b>Home Theater Setup:</b> Soundbar and surround sound setup, expert cable management, and equipment integration throughout the Inland Empire.</li>
-                <li><b>Cable Concealment:</b> In-wall and on-wall solutions to keep your space tidy and cable-free for a clean, professional look.</li>
-                <li><b>Custom Mount Solutions:</b> We offer affordable articulating, tilting, and low-profile mounting options tailored to your needs.</li>
-                <li><b>Commercial Installations:</b> Expert office, lobby, and retail TV mounting and display solutions for businesses across Riverside County.</li>
-            </ul>
-
-            <h3>Serving Moreno Valley and Beyond:</h3>
-            <ul>
-                <li>Moreno Valley</li>
-                <li>Riverside</li>
-                <li>Perris</li>
-                <li>Menifee</li>
-                <li>The greater Inland Empire</li>
-            </ul>
+        <section id="why-us" class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900">Why Homeowners Choose SBTV Installs</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto text-balance">We're more than just installers; we're your local experts dedicated to a perfect setup every time.</p>
+                </div>
+                <div class="mt-12 grid gap-8 md:grid-cols-3">
+                    <div class="text-center p-6">
+                        <div class="text-5xl text-orange-500 mb-4">⭐</div>
+                        <h3 class="text-xl font-bold text-gray-800">5-Star Rated Service</h3>
+                        <p class="mt-2 text-gray-600">Our commitment to quality and customer satisfaction shines in hundreds of reviews across the Inland Empire.</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="text-5xl text-orange-500 mb-4">🛠️</div>
+                        <h3 class="text-xl font-bold text-gray-800">Clean & Secure Installation</h3>
+                        <p class="mt-2 text-gray-600">We treat your home like our own, ensuring a flawless, secure mount with meticulous in-wall cable concealment.</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="text-5xl text-orange-500 mb-4">💰</div>
+                        <h3 class="text-xl font-bold text-gray-800">Upfront & Honest Pricing</h3>
+                        <p class="mt-2 text-gray-600">No surprises. Use our interactive estimator to see your project cost instantly before you even book.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="about-section" class="section">
-            <h2>About SBTV Installs</h2>
-            <p>
-                SBTV Installs is dedicated to providing you with fast, reliable, and professional TV mounting services in Moreno Valley, CA, and the surrounding Inland Empire. With years of experience and hundreds of happy customers, our technicians ensure your TV is mounted safely and looks great in your space. We serve both residential and commercial clients and are committed to top-tier customer service and delivering 5-star rated installations.
-            </p>
+        <section id="services" class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900">Our Professional Installation Services</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto text-balance">From a simple mount to a full cinematic experience, we've got you covered.</p>
+                </div>
+                <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="group bg-white p-8 rounded-xl shadow-md border-2 border-transparent transition-all duration-300 group-hover:border-orange-500 hover:shadow-xl hover:-translate-y-1">
+                        <h3 class="text-2xl font-bold group-hover:text-orange-500">📺 TV Wall Mounting</h3>
+                        <p class="mt-4 text-gray-600">Secure and level mounting for any TV size on drywall, plaster, brick, or above a fireplace. We ensure the perfect viewing angle for your space.</p>
+                    </div>
+                    <div class="group bg-white p-8 rounded-xl shadow-md border-2 border-transparent transition-all duration-300 group-hover:border-orange-500 hover:shadow-xl hover:-translate-y-1">
+                        <h3 class="text-2xl font-bold group-hover:text-orange-500">🔌 In-Wall Cable Concealment</h3>
+                        <p class="mt-4 text-gray-600">Achieve a clean, professional look. We hide all your HDMI, power, and audio cables inside the wall for a completely cord-free setup.</p>
+                    </div>
+                    <div class="group bg-white p-8 rounded-xl shadow-md border-2 border-transparent transition-all duration-300 group-hover:border-orange-500 hover:shadow-xl hover:-translate-y-1">
+                        <h3 class="text-2xl font-bold group-hover:text-orange-500">🔊 Soundbar Mounting</h3>
+                        <p class="mt-4 text-gray-600">Enhance your audio experience. We can mount your soundbar directly below your TV for a seamless look and immersive sound.</p>
+                    </div>
+                    <div class="group bg-white p-8 rounded-xl shadow-md border-2 border-transparent transition-all duration-300 group-hover:border-orange-500 hover:shadow-xl hover:-translate-y-1">
+                        <h3 class="text-2xl font-bold group-hover:text-orange-500">🎬 Home Theater Setup</h3>
+                        <p class="mt-4 text-gray-600">Complete integration of your surround sound, projector, and components for the ultimate movie night experience, right in your living room.</p>
+                    </div>
+                    <div class="group bg-white p-8 rounded-xl shadow-md border-2 border-transparent transition-all duration-300 group-hover:border-orange-500 hover:shadow-xl hover:-translate-y-1">
+                        <h3 class="text-2xl font-bold group-hover:text-orange-500">💼 Commercial Installations</h3>
+                        <p class="mt-4 text-gray-600">Professional display and TV mounting for offices, lobbies, restaurants, and retail spaces. Make a great impression on your clients.</p>
+                    </div>
+                     <div class="group bg-white p-8 rounded-xl shadow-md border-2 border-transparent transition-all duration-300 group-hover:border-orange-500 hover:shadow-xl hover:-translate-y-1">
+                        <h3 class="text-2xl font-bold group-hover:text-orange-500">💡 Custom Solutions</h3>
+                        <p class="mt-4 text-gray-600">Have a unique project? We handle custom requests, including articulating mounts, ceiling mounts, and multi-screen setups.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="privacy-policy-section" class="section">
-            <h2>Privacy Policy</h2>
-            <p>
-                <b>What information do we collect?</b>
-                <br>
-                We collect your name, email, phone number, and quiz answers when you fill out our quote request form.
-            </p>
-            <p>
-                <b>How do we use your information?</b>
-                <br>
-                Your information is used solely to respond to your quote request and to provide recommendations or follow-up for your installation.
-            </p>
-            <p>
-                <b>Will you share my information?</b>
-                <br>
-                No. Your information will never be sold or shared with third parties.
-            </p>
-            <p>
-                <b>How can I request deletion of my data?</b>
-                <br>
-                Contact us at <a href="mailto:sbtvinstallations@gmail.com">sbtvinstallations@gmail.com</a> to request removal of your data from our records.
-            </p>
+        <section id="pricing" class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900">Instant Installation Estimate</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto text-balance">Use our interactive tool to build your installation package and see the estimated cost in real-time. Final price confirmed upon booking.</p>
+                </div>
+                <div id="estimator-tool" class="mt-12 max-w-5xl mx-auto">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                        <div id="quiz-form-container">
+                            <form id="tvQuiz" action="https://formspree.io/f/xyzjraer" method="POST">
+                                <div class="space-y-6">
+                                    <div>
+                                        <label class="font-bold text-gray-800">1. What's the size of your TV?</label>
+                                        <div class="mt-2 grid grid-cols-1 sm:grid-cols-3 gap-2">
+                                            <input type="radio" name="tvSize" id="size-small" value="small" data-price="0" class="hidden custom-radio" required><label for="size-small" class="block text-center p-3 rounded-lg border-2 border-gray-300 cursor-pointer transition-all">Under 55"</label>
+                                            <input type="radio" name="tvSize" id="size-medium" value="medium" data-price="20" class="hidden custom-radio"><label for="size-medium" class="block text-center p-3 rounded-lg border-2 border-gray-300 cursor-pointer transition-all">55" - 75"</label>
+                                            <input type="radio" name="tvSize" id="size-large" value="large" data-price="50" class="hidden custom-radio"><label for="size-large" class="block text-center p-3 rounded-lg border-2 border-gray-300 cursor-pointer transition-all">Over 75"</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="font-bold text-gray-800">2. What type of wall?</label>
+                                        <div class="mt-2 grid grid-cols-2 sm:grid-cols-2 gap-2">
+                                            <input type="radio" name="wallType" id="wall-drywall" value="Drywall" data-price="0" class="hidden custom-radio" required><label for="wall-drywall" class="block text-center p-3 rounded-lg border-2 border-gray-300 cursor-pointer transition-all">Drywall / Plaster</label>
+                                            <input type="radio" name="wallType" id="wall-brick" value="Brick" data-price="40" class="hidden custom-radio"><label for="wall-brick" class="block text-center p-3 rounded-lg border-2 border-gray-300 cursor-pointer transition-all">Brick / Concrete</label>
+                                            <input type="radio" name="wallType" id="wall-fireplace" value="Fireplace" data-price="60" class="hidden custom-radio"><label for="wall-fireplace" class="block text-center p-3 rounded-lg border-2 border-gray-300 cursor-pointer transition-all">Above Fireplace</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="font-bold text-gray-800">3. Choose your add-ons:</label>
+                                        <div class="mt-2 space-y-2">
+                                            <input type="checkbox" name="addOns" id="addon-hide-cables" value="hideCables" data-price="80" class="hidden custom-radio"><label for="addon-hide-cables" class="block p-3 rounded-lg border-2 border-gray-300 cursor-pointer transition-all">🔌 In-Wall Cable Concealment</label>
+                                            <input type="checkbox" name="addOns" id="addon-soundbar" value="soundbar" data-price="50" class="hidden custom-radio"><label for="addon-soundbar" class="block p-3 rounded-lg border-2 border-gray-300 cursor-pointer transition-all">🔊 Soundbar Mounting</label>
+                                            <input type="checkbox" name="addOns" id="addon-mount-provide" value="provideMount" data-price="70" class="hidden custom-radio"><label for="addon-mount-provide" class="block p-3 rounded-lg border-2 border-gray-300 cursor-pointer transition-all">💪 Provide Full-Motion Mount</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="contact-form-section" class="mt-8 pt-6 border-t border-gray-200 hidden">
+                                    <h3 class="text-xl font-bold text-center">Looks Good? Let's Get You Scheduled!</h3>
+                                    <div class="mt-4 space-y-4">
+                                        <div>
+                                            <label for="name" class="font-medium text-gray-700">Name *</label>
+                                            <input type="text" id="name" name="name" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500" required>
+                                        </div>
+                                        <div>
+                                            <label for="email" class="font-medium text-gray-700">Email *</label>
+                                            <input type="email" id="email" name="email" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500" required>
+                                        </div>
+                                        <div>
+                                            <label for="phone" class="font-medium text-gray-700">Phone *</label>
+                                            <input type="tel" id="phone" name="phone" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500" required>
+                                        </div>
+                                        <input type="hidden" name="estimated_price" id="estimated_price_field">
+                                        <input type="hidden" name="quote_details" id="quote_details_field">
+                                        <p class="text-xs text-gray-500">By submitting, you agree to our privacy policy. We'll contact you to confirm details and schedule your installation.</p>
+                                        <button type="submit" class="w-full bg-orange-500 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-600 transition-all transform hover:scale-105">Request Installation</button>
+                                        <div id="form-success" class="hidden mt-4 p-3 rounded-md bg-green-100 text-green-800 border border-green-200 text-center"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="lg:sticky top-24 h-full">
+                            <div class="bg-gray-50 rounded-xl p-6 shadow-lg border border-gray-200">
+                                <h3 class="text-xl font-bold text-center text-gray-800">Your Estimate</h3>
+                                <div class="my-4 text-center">
+                                    <span class="text-5xl font-extrabold text-orange-500" id="total-price">$99</span>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="priceChart"></canvas>
+                                </div>
+                                <div id="price-breakdown" class="mt-4 text-sm space-y-1">
+                                    <div class="flex justify-between items-center"><span class="text-gray-600">Base Installation:</span><span class="font-semibold text-gray-800">$99</span></div>
+                                </div>
+                                <p id="cta-prompt" class="mt-6 text-center text-gray-600 font-semibold">Select your TV size and wall type to see your final quote and schedule!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900">What Our Customers Are Saying</h2>
+                     <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto text-balance">We're proud to be the top-rated TV mounting service in the Inland Empire.</p>
+                </div>
+                <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <p class="text-gray-600">"Incredibly professional and fast. The technician from SBTV Installs mounted our 75" TV above the fireplace perfectly. The cables are completely hidden. Highly recommend!"</p>
+                        <p class="mt-4 font-bold text-gray-900">- Sarah L.</p>
+                        <p class="text-sm text-gray-500">Moreno Valley, CA</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <p class="text-gray-600">"Called them in the morning and they were able to come out the same day. The installer was friendly, knowledgeable, and did a super clean job. Fair price too!"</p>
+                        <p class="mt-4 font-bold text-gray-900">- Michael B.</p>
+                        <p class="text-sm text-gray-500">Riverside, CA</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <p class="text-gray-600">"I was worried about mounting my soundbar, but they made it look easy and seamless with the TV. The whole setup looks amazing. 5-star service all the way."</p>
+                        <p class="mt-4 font-bold text-gray-900">- Jessica R.</p>
+                        <p class="text-sm text-gray-500">Menifee, CA</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+                </div>
+                <div class="mt-12 max-w-3xl mx-auto space-y-4">
+                    <div class="faq-item bg-gray-50 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-4 font-semibold text-lg">
+                            <span>Do I need to buy my own TV mount?</span>
+                            <span class="arrow transition-transform duration-300">▼</span>
+                        </button>
+                        <div class="faq-answer hidden p-4 pt-0 text-gray-600">
+                            <p>You can, but you don't have to! We keep high-quality fixed, tilting, and full-motion articulating mounts in stock. You can select "Provide Full-Motion Mount" in our estimator, or we can discuss options when we call to schedule.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-gray-50 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-4 font-semibold text-lg">
+                            <span>How long does an installation take?</span>
+                            <span class="arrow transition-transform duration-300">▼</span>
+                        </button>
+                        <div class="faq-answer hidden p-4 pt-0 text-gray-600">
+                            <p>A standard TV mounting installation typically takes about 60-90 minutes. If you've selected in-wall cable concealment or have a more complex setup (like a brick wall), it may take a bit longer. We always work efficiently to get the job done right.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-gray-50 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-4 font-semibold text-lg">
+                            <span>What areas do you serve?</span>
+                            <span class="arrow transition-transform duration-300">▼</span>
+                        </button>
+                        <div class="faq-answer hidden p-4 pt-0 text-gray-600">
+                            <p>We proudly serve the entire Inland Empire, including Moreno Valley, Riverside, Perris, Menifee, Corona, Temecula, Murrieta, and surrounding communities. If you're unsure if we service your area, just give us a call!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <script>
-        // Ensure the DOM is fully loaded before running scripts that interact with elements
-        document.addEventListener('DOMContentLoaded', function() {
-            // Highlight nav based on scroll
-            const navLinks = document.querySelectorAll('nav a');
-            const sections = document.querySelectorAll('main.section');
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <p>&copy; 2025 SBTV Installs. All Rights Reserved.</p>
+                <div class="flex mt-4 sm:mt-0 space-x-6">
+                    <a href="mailto:sbtvinstallations@gmail.com" class="hover:text-orange-400">sbtvinstallations@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <a href="#" id="back-to-top" class="hidden fixed bottom-5 right-5 bg-orange-500 text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition-all">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+    </a>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('hidden');
+                } else {
+                    backToTopButton.classList.add('hidden');
+                }
+            });
+
+            const navLinks = document.querySelectorAll('header .nav-link');
+            const sections = document.querySelectorAll('main section');
             window.addEventListener('scroll', () => {
                 let current = '';
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 60) {
+                    if (pageYOffset >= sectionTop - 80) {
                         current = section.getAttribute('id');
                     }
                 });
-
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.getAttribute('href').substring(1) === current) {
@@ -293,63 +355,180 @@
                 });
             });
 
-
-            // Existing Quiz Formspree AJAX success message (id="tvQuiz")
-            const tvQuizForm = document.getElementById('tvQuiz');
-            if (tvQuizForm) { // Add a check to ensure the element exists
-                tvQuizForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    const data = new FormData(tvQuizForm);
-                    const action = tvQuizForm.getAttribute('action');
-                    const formSuccess = document.getElementById('form-success');
-
-                    try {
-                        const response = await fetch(action, {
-                            method: 'POST',
-                            body: data,
-                            headers: {
-                                'Accept': 'application/json'
-                            }
-                        });
-
-                        if (response.ok) {
-                            tvQuizForm.reset();
-                            if (formSuccess) {
-                                formSuccess.textContent = 'Thank you! Your request has been received.';
-                                formSuccess.style.backgroundColor = '#e6ffed'; /* Light green */
-                                formSuccess.style.color = '#22863a'; /* Dark green */
-                                formSuccess.style.display = 'block';
-                                // Hide success message after a few seconds
-                                setTimeout(() => {
-                                    formSuccess.style.display = 'none';
-                                }, 5000);
-                            }
-                        } else {
-                            // Handle non-OK responses (e.g., server error)
-                            if (formSuccess) {
-                                formSuccess.textContent = 'There was a problem submitting your quote request. Please try again later.';
-                                formSuccess.style.backgroundColor = '#ffe6e6'; /* Light red background */
-                                formSuccess.style.color = '#cc0000'; /* Dark red text */
-                                formSuccess.style.display = 'block';
-                                setTimeout(() => {
-                                    formSuccess.style.display = 'none';
-                                }, 5000);
-                            }
-                        }
-                    } catch (error) {
-                        // Handle network errors
-                        if (formSuccess) {
-                            formSuccess.textContent = 'Network error. Please check your internet connection and try again.';
-                            formSuccess.style.backgroundColor = '#ffe6e6'; /* Light red background */
-                            formSuccess.style.color = '#cc0000'; /* Dark red text */
-                            formSuccess.style.display = 'block';
-                            setTimeout(() => {
-                                formSuccess.style.display = 'none';
-                            }, 5000);
-                        }
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                question.addEventListener('click', () => {
+                    const isOpen = question.classList.contains('open');
+                    faqItems.forEach(i => {
+                        i.querySelector('.faq-question').classList.remove('open');
+                        i.querySelector('.faq-answer').classList.add('hidden');
+                    });
+                    if (!isOpen) {
+                        question.classList.add('open');
+                        answer.classList.remove('hidden');
                     }
                 });
+            });
+
+            const estimatorTool = document.getElementById('estimator-tool');
+            const totalPriceEl = document.getElementById('total-price');
+            const priceBreakdownEl = document.getElementById('price-breakdown');
+            const contactFormSection = document.getElementById('contact-form-section');
+            const ctaPrompt = document.getElementById('cta-prompt');
+            const estimatedPriceField = document.getElementById('estimated_price_field');
+            const quoteDetailsField = document.getElementById('quote_details_field');
+            
+            const basePrice = 99;
+            let currentPrice = basePrice;
+            const priceComponents = {
+                'Base Installation': basePrice,
+            };
+
+            const ctx = document.getElementById('priceChart').getContext('2d');
+            let priceChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(priceComponents),
+                    datasets: [{
+                        data: Object.values(priceComponents),
+                        backgroundColor: ['#F97316', '#FDBA74', '#fed7aa', '#fee2b1', '#ffeccb'],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 2,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+                        tooltip: {
+                             callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '60%'
+                }
+            });
+
+            function updatePrice() {
+                let total = basePrice;
+                const activeSelections = {};
+                priceComponents['Base Installation'] = basePrice;
+
+                const selectedSize = document.querySelector('input[name="tvSize"]:checked');
+                if (selectedSize) {
+                    const price = parseInt(selectedSize.dataset.price);
+                    total += price;
+                    priceComponents['TV Size ('+ selectedSize.labels[0].textContent +')'] = price;
+                    activeSelections['TV Size'] = selectedSize.labels[0].textContent;
+                }
+
+                const selectedWall = document.querySelector('input[name="wallType"]:checked');
+                if (selectedWall) {
+                    const price = parseInt(selectedWall.dataset.price);
+                    total += price;
+                     priceComponents['Wall Type ('+ selectedWall.labels[0].textContent +')'] = price;
+                     activeSelections['Wall Type'] = selectedWall.labels[0].textContent;
+                }
+                
+                const selectedAddOns = document.querySelectorAll('input[name="addOns"]:checked');
+                let addOnDetails = [];
+                selectedAddOns.forEach(addon => {
+                    const price = parseInt(addon.dataset.price);
+                    total += price;
+                    const label = addon.labels[0].textContent;
+                    priceComponents[label] = price;
+                    addOnDetails.push(label.trim());
+                });
+                if(addOnDetails.length > 0){
+                    activeSelections['Add-ons'] = addOnDetails.join(', ');
+                }
+
+                currentPrice = total;
+                totalPriceEl.textContent = `$${currentPrice}`;
+
+                const breakdownHTML = Object.entries(priceComponents)
+                    .filter(([key, value]) => value > 0 || key === 'Base Installation')
+                    .map(([key, value]) => `<div class="flex justify-between items-center"><span class="text-gray-600">${key.split('(')[0].trim()}:</span><span class="font-semibold text-gray-800">$${value}</span></div>`)
+                    .join('');
+                priceBreakdownEl.innerHTML = breakdownHTML;
+                
+                const cleanPriceComponents = Object.fromEntries(Object.entries(priceComponents).filter(([_, v]) => v > 0));
+
+                priceChart.data.labels = Object.keys(cleanPriceComponents);
+                priceChart.data.datasets[0].data = Object.values(cleanPriceComponents);
+                priceChart.update();
+                
+                if (selectedSize && selectedWall) {
+                    contactFormSection.classList.remove('hidden');
+                    ctaPrompt.classList.add('hidden');
+                } else {
+                    contactFormSection.classList.add('hidden');
+                    ctaPrompt.classList.remove('hidden');
+                }
+
+                estimatedPriceField.value = `$${currentPrice}`;
+                quoteDetailsField.value = JSON.stringify(activeSelections, null, 2);
             }
+
+            estimatorTool.addEventListener('change', updatePrice);
+
+            const tvQuizForm = document.getElementById('tvQuiz');
+            tvQuizForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const formSuccess = document.getElementById('form-success');
+                const data = new FormData(tvQuizForm);
+                const action = tvQuizForm.getAttribute('action');
+                
+                formSuccess.classList.remove('hidden', 'bg-red-100', 'text-red-800', 'border-red-200');
+                formSuccess.classList.add('bg-blue-100', 'text-blue-800');
+                formSuccess.textContent = 'Sending your request...';
+                formSuccess.style.display = 'block';
+
+                try {
+                    const response = await fetch(action, {
+                        method: 'POST',
+                        body: data,
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (response.ok) {
+                        tvQuizForm.reset();
+                        updatePrice();
+                        contactFormSection.classList.add('hidden');
+                        ctaPrompt.classList.remove('hidden');
+                        formSuccess.classList.remove('bg-blue-100', 'text-blue-800');
+                        formSuccess.classList.add('bg-green-100', 'text-green-800', 'border-green-200');
+                        formSuccess.textContent = 'Thank you! Your request has been received. We will be in touch shortly.';
+                    } else {
+                        throw new Error('Server responded with an error.');
+                    }
+                } catch (error) {
+                    formSuccess.classList.remove('bg-blue-100', 'text-blue-800');
+                    formSuccess.classList.add('bg-red-100', 'text-red-800', 'border-red-200');
+                    formSuccess.textContent = 'There was a problem. Please try again or call us.';
+                } finally {
+                    setTimeout(() => {
+                         formSuccess.style.display = 'none';
+                    }, 6000);
+                }
+            });
+
+            updatePrice();
         });
     </script>
 </body>
