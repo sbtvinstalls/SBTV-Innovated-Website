@@ -6,11 +6,16 @@
     <title>Expert TV Installer in Moreno Valley & Inland Empire | SBTV Installs</title>
     <meta name="description" content="Get an instant TV mounting quote! 5-star rated home theater installation in Moreno Valley, CA. Same-day service, wire concealment, and soundbar mounting.">
     
+    <!-- External Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -53,6 +58,7 @@
 </head>
 <body class="antialiased">
 
+    <!-- Header -->
     <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -71,6 +77,7 @@
                 </div>
             </div>
         </nav>
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2">
             <a href="#services" class="block nav-link text-gray-600 hover:text-orange-500 transition-colors">Services</a>
             <a href="#why-us" class="block nav-link text-gray-600 hover:text-orange-500 transition-colors">Why Us</a>
@@ -81,6 +88,7 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="home" class="py-20 md:py-32">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight text-balance">
@@ -100,6 +108,7 @@
             </div>
         </section>
 
+        <!-- Why Us Section -->
         <section id="why-us" class="py-16 bg-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
@@ -126,6 +135,7 @@
             </div>
         </section>
 
+        <!-- Services Section -->
         <section id="services" class="py-16">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
@@ -161,6 +171,7 @@
             </div>
         </section>
 
+        <!-- Pricing / Estimator Section -->
         <section id="pricing" class="py-16 bg-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
@@ -170,7 +181,7 @@
                 <div id="estimator-tool" class="mt-12 max-w-5xl mx-auto">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                         <div id="quiz-form-container">
-                            <form id="tvQuiz" action="https://formspree.io/f/YOUR_UNIQUE_CODE" method="POST">
+                            <form id="tvQuiz" action="https://formspree.io/f/xyzjraer" method="POST">
                                 <div class="space-y-6">
                                     <div>
                                         <label class="font-bold text-gray-800">1. What's the size of your TV?</label>
@@ -182,7 +193,7 @@
                                     </div>
                                     <div>
                                         <label class="font-bold text-gray-800">2. What type of wall?</label>
-                                        <div class="mt-2 grid grid-cols-2 sm:grid-cols-2 gap-2">
+                                        <div class="mt-2 grid grid-cols-2 sm:grid-cols-3 gap-2">
                                             <input type="radio" name="wallType" id="wall-drywall" value="Drywall" data-price="0" class="hidden custom-radio" required><label for="wall-drywall" class="block text-center p-3 rounded-lg border-2 border-gray-300 cursor-pointer transition-all">Drywall / Plaster</label>
                                             <input type="radio" name="wallType" id="wall-brick" value="Brick" data-price="40" class="hidden custom-radio"><label for="wall-brick" class="block text-center p-3 rounded-lg border-2 border-gray-300 cursor-pointer transition-all">Brick / Concrete</label>
                                             <input type="radio" name="wallType" id="wall-fireplace" value="Fireplace" data-price="60" class="hidden custom-radio"><label for="wall-fireplace" class="block text-center p-3 rounded-lg border-2 border-gray-300 cursor-pointer transition-all">Above Fireplace</label>
@@ -202,6 +213,7 @@
                                     <button type="button" id="reset-button" class="w-full text-center text-sm text-gray-600 hover:text-orange-500 font-semibold">Clear & Reset</button>
                                 </div>
 
+                                <!-- Contact Form Section (Initially Hidden) -->
                                 <div id="contact-form-section" class="mt-8 pt-6 border-t border-gray-200 hidden">
                                     <h3 class="text-xl font-bold text-center">Looks Good? Let's Get You Scheduled!</h3>
                                     <div class="mt-4 space-y-4">
@@ -223,11 +235,12 @@
                                         <input type="hidden" name="quote_details" id="quote_details_field">
                                         <p class="text-xs text-gray-500">By submitting, you agree to our privacy policy. We'll contact you to confirm details and schedule your installation.</p>
                                         <button type="submit" id="submit-button" class="w-full bg-orange-500 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-600 transition-all transform hover:scale-105">Request Installation</button>
-                                        <div id="form-status" class="hidden mt-4 p-3 rounded-md bg-green-100 text-green-800 border border-green-200 text-center"></div>
+                                        <div id="form-status" class="hidden mt-4 p-3 rounded-md text-center"></div>
                                     </div>
                                 </div>
                             </form>
                         </div>
+                        <!-- Sticky Price Display -->
                         <div class="lg:sticky top-24 h-full">
                             <div class="bg-gray-50 rounded-xl p-6 shadow-lg border border-gray-200">
                                 <h3 class="text-xl font-bold text-center text-gray-800">Your Estimate</h3>
@@ -247,12 +260,14 @@
             </div>
         </section>
 
+        <!-- FAQ Section -->
         <section id="faq" class="py-16">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
                 <div class="text-center">
                     <h2 class="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
                 </div>
                 <div class="mt-8 space-y-4">
+                    <!-- FAQ Item 1 -->
                     <div class="faq-item bg-white p-4 rounded-lg shadow-sm">
                         <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800">
                             <span>How long does an installation take?</span>
@@ -262,6 +277,7 @@
                             A standard TV mounting usually takes 60-90 minutes. Installations with wire concealment or on tricky surfaces like brick may take a bit longer, typically around 2 hours.
                         </div>
                     </div>
+                    <!-- FAQ Item 2 -->
                     <div class="faq-item bg-white p-4 rounded-lg shadow-sm">
                         <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800">
                             <span>Do you provide the TV mount?</span>
@@ -271,6 +287,7 @@
                             You can provide your own mount, or we can supply a high-quality, full-motion mount for you. Just select "Provide Full-Motion Mount" in the estimator tool!
                         </div>
                     </div>
+                    <!-- FAQ Item 3 -->
                     <div class="faq-item bg-white p-4 rounded-lg shadow-sm">
                         <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800">
                             <span>What areas do you service?</span>
@@ -280,6 +297,7 @@
                             We proudly serve Moreno Valley and the entire Inland Empire, including Riverside, Perris, Corona, and surrounding communities. If you're unsure if you're in our service area, just give us a call!
                         </div>
                     </div>
+                     <!-- FAQ Item 4 -->
                      <div class="faq-item bg-white p-4 rounded-lg shadow-sm">
                         <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800">
                             <span>What is your warranty?</span>
@@ -294,6 +312,7 @@
         </section>
     </main>
     
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p>&copy; 2025 SBTV Installs. All Rights Reserved.</p>
@@ -301,200 +320,247 @@
         </div>
     </footer>
 
+    <!-- JavaScript Logic -->
     <script>
-        // --- Mobile Menu ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // --- Active Nav Link Scrolling ---
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('main section');
-        window.onscroll = () => {
-            let current = 'home';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 68) {
-                    current = section.getAttribute('id');
-                }
+        // *** KEY FIX: Wait for the entire HTML document to be loaded and parsed before running any script ***
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Mobile Menu ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
             });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        };
 
-        // --- FAQ Accordion ---
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            const answer = item.querySelector('.faq-answer');
-            question.addEventListener('click', () => {
-                const isOpen = question.classList.contains('open');
-                faqItems.forEach(i => {
-                    i.querySelector('.faq-question').classList.remove('open');
-                    i.querySelector('.faq-answer').classList.add('hidden');
+            // --- Active Nav Link Scrolling ---
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section');
+            window.addEventListener('scroll', () => {
+                let current = 'home';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.pageYOffset >= sectionTop - 68) {
+                        current = section.getAttribute('id');
+                    }
                 });
-                if (!isOpen) {
-                    question.classList.add('open');
-                    answer.classList.remove('hidden');
-                }
-            });
-        });
-
-        // --- Estimator Tool Logic ---
-        const quizForm = document.getElementById('tvQuiz');
-        const totalPriceEl = document.getElementById('total-price');
-        const priceBreakdownEl = document.getElementById('price-breakdown');
-        const basePriceDisplay = document.getElementById('base-price-display');
-        const contactFormSection = document.getElementById('contact-form-section');
-        const resetButton = document.getElementById('reset-button');
-        const estimatedPriceField = document.getElementById('estimated_price_field');
-        const quoteDetailsField = document.getElementById('quote_details_field');
-        
-        const BASE_PRICE = 99;
-        let chart;
-
-        const priceData = {
-            base: { label: 'Base Install', price: BASE_PRICE },
-            tvSize: { label: 'Size Surcharge', price: 0 },
-            wallType: { label: 'Wall Surcharge', price: 0 },
-            hideCables: { label: 'Cable Concealment', price: 0 },
-            soundbar: { label: 'Soundbar Mount', price: 0 },
-            provideMount: { label: 'Provide Mount', price: 0 }
-        };
-
-        function updatePrice() {
-            const formData = new FormData(quizForm);
-            let total = BASE_PRICE;
-            let details = [];
-
-            // Reset prices
-            Object.keys(priceData).forEach(key => {
-                if (key !== 'base') priceData[key].price = 0;
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
             });
 
-            // TV Size
-            const tvSize = formData.get('tvSize');
-            if (tvSize) {
-                const selected = quizForm.querySelector(`input[name="tvSize"]:checked`);
-                const price = parseInt(selected.dataset.price);
-                total += price;
-                priceData.tvSize.price = price;
-                details.push(`TV Size: ${selected.nextElementSibling.textContent}`);
-            }
-
-            // Wall Type
-            const wallType = formData.get('wallType');
-            if (wallType) {
-                const selected = quizForm.querySelector(`input[name="wallType"]:checked`);
-                const price = parseInt(selected.dataset.price);
-                total += price;
-                priceData.wallType.price = price;
-                details.push(`Wall: ${selected.nextElementSibling.textContent}`);
-            }
-
-            // Add-ons
-            const addOns = formData.getAll('addOns');
-            addOns.forEach(addOn => {
-                const selected = quizForm.querySelector(`input[value="${addOn}"]`);
-                const price = parseInt(selected.dataset.price);
-                total += price;
-                priceData[addOn].price = price;
-                details.push(`Add-on: ${selected.nextElementSibling.textContent.trim().split(' ')[1]}`);
+            // --- FAQ Accordion ---
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const answer = item.querySelector('.faq-answer');
+                    const isOpen = question.classList.contains('open');
+                    
+                    // Close all other items
+                    faqItems.forEach(i => {
+                        i.querySelector('.faq-question').classList.remove('open');
+                        i.querySelector('.faq-answer').classList.add('hidden');
+                    });
+                    
+                    // Open the clicked item if it wasn't already open
+                    if (!isOpen) {
+                        question.classList.add('open');
+                        answer.classList.remove('hidden');
+                    }
+                });
             });
+
+            // --- Estimator Tool Logic ---
+            const quizForm = document.getElementById('tvQuiz');
+            const totalPriceEl = document.getElementById('total-price');
+            const priceBreakdownEl = document.getElementById('price-breakdown');
+            const contactFormSection = document.getElementById('contact-form-section');
+            const resetButton = document.getElementById('reset-button');
+            const estimatedPriceField = document.getElementById('estimated_price_field');
+            const quoteDetailsField = document.getElementById('quote_details_field');
             
-            totalPriceEl.textContent = `$${total}`;
-            basePriceDisplay.textContent = `$${BASE_PRICE}`;
-            estimatedPriceField.value = `$${total}`;
-            quoteDetailsField.value = details.join(', ');
+            const BASE_PRICE = 99;
+            let chart;
 
-            updateBreakdown();
-            updateChart();
-            
-            if (tvSize && wallType) {
-                contactFormSection.classList.remove('hidden');
-            }
-        }
-        
-        function updateBreakdown() {
-            priceBreakdownEl.innerHTML = `<div class="flex justify-between items-center"><span class="text-gray-600">Base Installation</span><span class="font-semibold" id="base-price-display">$${BASE_PRICE}</span></div>`;
-            for (const key in priceData) {
-                if (key !== 'base' && priceData[key].price > 0) {
-                    const item = document.createElement('div');
-                    item.className = 'flex justify-between items-center';
-                    item.innerHTML = `<span class="text-gray-600">${priceData[key].label}</span><span class="font-semibold">$${priceData[key].price}</span>`;
-                    priceBreakdownEl.appendChild(item);
+            const priceData = {
+                base: { label: 'Base Install', price: BASE_PRICE },
+                tvSize: { label: 'Size Surcharge', price: 0 },
+                wallType: { label: 'Wall Surcharge', price: 0 },
+                hideCables: { label: 'Cable Concealment', price: 0 },
+                soundbar: { label: 'Soundbar Mount', price: 0 },
+                provideMount: { label: 'Provide Mount', price: 0 }
+            };
+
+            function updatePrice() {
+                const formData = new FormData(quizForm);
+                let total = BASE_PRICE;
+                let details = [];
+
+                // Reset dynamic prices
+                Object.keys(priceData).forEach(key => {
+                    if (key !== 'base') priceData[key].price = 0;
+                });
+
+                // TV Size
+                const tvSize = formData.get('tvSize');
+                if (tvSize) {
+                    const selected = quizForm.querySelector(`input[name="tvSize"]:checked`);
+                    const price = parseInt(selected.dataset.price);
+                    total += price;
+                    priceData.tvSize.price = price;
+                    details.push(`TV Size: ${selected.nextElementSibling.textContent}`);
+                }
+
+                // Wall Type
+                const wallType = formData.get('wallType');
+                if (wallType) {
+                    const selected = quizForm.querySelector(`input[name="wallType"]:checked`);
+                    const price = parseInt(selected.dataset.price);
+                    total += price;
+                    priceData.wallType.price = price;
+                    details.push(`Wall: ${selected.nextElementSibling.textContent}`);
+                }
+
+                // Add-ons
+                const addOns = formData.getAll('addOns');
+                let addOnDetails = [];
+                addOns.forEach(addOn => {
+                    const selected = quizForm.querySelector(`input[value="${addOn}"]`);
+                    const price = parseInt(selected.dataset.price);
+                    total += price;
+                    priceData[addOn].price = price;
+                    addOnDetails.push(selected.nextElementSibling.textContent.replace(/🔌|🔊|💪/g, '').trim());
+                });
+                if(addOnDetails.length > 0) {
+                    details.push(`Add-ons: ${addOnDetails.join(', ')}`);
+                }
+                
+                totalPriceEl.textContent = `$${total}`;
+                estimatedPriceField.value = `$${total}`;
+                quoteDetailsField.value = details.join('; ');
+
+                updateBreakdown();
+                updateChart();
+                
+                if (tvSize && wallType) {
+                    contactFormSection.classList.remove('hidden');
+                } else {
+                    contactFormSection.classList.add('hidden');
                 }
             }
-        }
+            
+            function updateBreakdown() {
+                priceBreakdownEl.innerHTML = `<div class="flex justify-between items-center"><span class="text-gray-600">Base Installation</span><span class="font-semibold">$${BASE_PRICE}</span></div>`;
+                for (const key in priceData) {
+                    if (key !== 'base' && priceData[key].price > 0) {
+                        const item = document.createElement('div');
+                        item.className = 'flex justify-between items-center';
+                        item.innerHTML = `<span class="text-gray-600">${priceData[key].label}</span><span class="font-semibold">$${priceData[key].price}</span>`;
+                        priceBreakdownEl.appendChild(item);
+                    }
+                }
+            }
 
-        function createChart() {
-            const ctx = document.getElementById('priceChart').getContext('2d');
-            chart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: [],
-                    datasets: [{
-                        data: [],
-                        backgroundColor: ['#F97316', '#FB923C', '#FDBA74', '#FECACA', '#FED7AA', '#FFEDD5'],
-                        borderColor: '#FDF8F0',
-                        borderWidth: 4,
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    cutout: '70%',
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return `${context.label}: $${context.raw}`;
+            function createChart() {
+                const ctx = document.getElementById('priceChart').getContext('2d');
+                chart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: [],
+                        datasets: [{
+                            data: [],
+                            backgroundColor: ['#F97316', '#FB923C', '#FDBA74', '#FECACA', '#FED7AA', '#FFEDD5'],
+                            borderColor: '#FDF8F0',
+                            borderWidth: 4,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '70%',
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return `${context.label}: $${context.raw}`;
+                                    }
                                 }
                             }
                         }
                     }
-                }
-            });
-        }
-
-        function updateChart() {
-            const labels = [];
-            const data = [];
-            for (const key in priceData) {
-                if (priceData[key].price > 0) {
-                    labels.push(priceData[key].label);
-                    data.push(priceData[key].price);
-                }
+                });
             }
-            chart.data.labels = labels;
-            chart.data.datasets[0].data = data;
-            chart.update();
-        }
 
-        quizForm.addEventListener('change', updatePrice);
+            function updateChart() {
+                const labels = [];
+                const data = [];
+                for (const key in priceData) {
+                    if (priceData[key].price > 0) {
+                        labels.push(priceData[key].label);
+                        data.push(priceData[key].price);
+                    }
+                }
+                chart.data.labels = labels;
+                chart.data.datasets[0].data = data;
+                chart.update();
+            }
 
-        resetButton.addEventListener('click', () => {
-            quizForm.reset();
-            contactFormSection.classList.add('hidden');
-            priceBreakdownEl.innerHTML = `<div class="flex justify-between items-center"><span class="text-gray-600">Base Installation</span><span class="font-semibold" id="base-price-display">$${BASE_PRICE}</span></div>`;
-            totalPriceEl.textContent = `$${BASE_PRICE}`;
-            Object.keys(priceData).forEach(key => {
-                 if (key !== 'base') priceData[key].price = 0;
+            quizForm.addEventListener('change', updatePrice);
+
+            resetButton.addEventListener('click', () => {
+                quizForm.reset();
+                contactFormSection.classList.add('hidden');
+                totalPriceEl.textContent = `$${BASE_PRICE}`;
+                Object.keys(priceData).forEach(key => {
+                     if (key !== 'base') priceData[key].price = 0;
+                });
+                priceData.base.price = BASE_PRICE;
+                updateBreakdown();
+                updateChart();
             });
-            priceData.base.price = BASE_PRICE;
-            updateChart();
-        });
 
-        // --- Formspree AJAX Submission ---
-        async function handleSubmit(event) {
-            event.preventDefault();
-            const form = event.target;
-            const status = document.getElementById('form-status');
-            const data = new FormData(event.target);
+            // --- Formspree AJAX Submission ---
+            async function handleSubmit(event) {
+                event.preventDefault();
+                const form = event.target;
+                const status = document.getElementById('form-status');
+                const data = new FormData(event.target);
+                
+                fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    if (response.ok) {
+                        status.innerHTML = "Thanks for your request! We'll be in touch soon.";
+                        status.className = 'block mt-4 p-3 rounded-md bg-green-100 text-green-800 border border-green-200 text-center';
+                        form.reset();
+                        resetButton.click(); // Reset the whole estimator
+                    } else {
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                            } else {
+                                status.innerHTML = "Oops! There was a problem submitting your form"
+                            }
+                            status.className = 'block mt-4 p-3 rounded-md bg-red-100 text-red-800 border border-red-200 text-center';
+                        })
+                    }
+                }).catch(error => {
+                    status.innerHTML = "Oops! There was a problem submitting your form";
+                    status.className = 'block mt-4 p-3 rounded-md bg-red-100 text-red-800 border border-red-200 text-center';
+                });
+            }
+            quizForm.addEventListener("submit", handleSubmit);
+            
+            // --- Initialize ---
+            createChart();
+            updatePrice();
+        });
+    </script>
+</body>
+</html>
+
