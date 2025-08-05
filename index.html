@@ -135,6 +135,38 @@
             </div>
         </section>
 
+        <!-- *** NEW INFOGRAPHIC SECTION START *** -->
+        <section id="infographic-summary" class="py-16 bg-gray-100">
+            <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+                <header class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800">The SBTV Difference at a Glance</h2>
+                    <p class="mt-4 text-lg text-gray-600 text-balance">A quick look at how we deliver the perfect TV setup, every time.</p>
+                </header>
+
+                <div class="bg-white rounded-lg shadow-md p-8 mb-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-center p-6 border-r-0 md:border-r-2 border-dashed border-gray-200">
+                        <h3 class="text-2xl font-bold text-red-500">The Problem</h3>
+                        <p class="text-5xl md:text-6xl mt-4"> tangled wires </p>
+                        <p class="mt-4 text-gray-600">A mess of cables and the stress of a complex installation.</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <h3 class="text-2xl font-bold text-green-500">The Solution</h3>
+                        <p class="text-5xl md:text-6xl mt-4"> clean look </p>
+                        <p class="mt-4 text-gray-600">A fast, professional service with a flawless finish.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                    <h3 class="text-center text-2xl font-extrabold text-gray-800 mb-4">What Our Customers Ask For</h3>
+                    <p class="text-center text-gray-600 mb-8">Wire concealment is a game-changer for a clean, professional look!</p>
+                    <div class="relative mx-auto" style="max-width: 350px; height: 350px;">
+                        <canvas id="servicesChartPage"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- *** NEW INFOGRAPHIC SECTION END *** -->
+
         <!-- Services Section -->
         <section id="services" class="py-16">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -259,4 +291,322 @@
                     <h2 class="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
                 </div>
                 <div class="mt-8 space-y-4">
-                    <!-- F
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item bg-white p-4 rounded-lg shadow-sm">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800">
+                            <span>How long does an installation take?</span>
+                            <span class="arrow transition-transform duration-300">▼</span>
+                        </button>
+                        <div class="faq-answer mt-2 text-gray-600 hidden">
+                            A standard TV mounting is very fast and typically takes only about 30 minutes to complete perfectly. Installations with add-ons like wire concealment may take slightly longer.
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-white p-4 rounded-lg shadow-sm">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800">
+                            <span>Do you provide the TV mount?</span>
+                            <span class="arrow transition-transform duration-300">▼</span>
+                        </button>
+                        <div class="faq-answer mt-2 text-gray-600 hidden">
+                            You can provide your own mount, or we can supply a high-quality, full-motion mount for you. Just select "Provide Full-Motion Mount" in the estimator tool!
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item bg-white p-4 rounded-lg shadow-sm">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800">
+                            <span>What areas do you service?</span>
+                            <span class="arrow transition-transform duration-300">▼</span>
+                        </button>
+                        <div class="faq-answer mt-2 text-gray-600 hidden">
+                            We proudly serve Moreno Valley and the entire Inland Empire, including Riverside, Perris, Corona, and surrounding communities. If you're unsure if you're in our service area, just give us a call!
+                        </div>
+                    </div>
+                     <!-- FAQ Item 4 -->
+                     <div class="faq-item bg-white p-4 rounded-lg shadow-sm">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800">
+                            <span>What is your warranty?</span>
+                            <span class="arrow transition-transform duration-300">▼</span>
+                        </button>
+                        <div class="faq-answer mt-2 text-gray-600 hidden">
+                            We stand by our work with a lifetime warranty on all installations. We guarantee that your TV will be secure and level, giving you complete peace of mind.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 SBTV Installs. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Your Local TV Mounting Experts in Moreno Valley, CA</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Mobile Menu ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // --- Active Nav Link Scrolling ---
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section');
+            window.addEventListener('scroll', () => {
+                let current = 'home';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.pageYOffset >= sectionTop - 68) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // --- FAQ Accordion ---
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const answer = item.querySelector('.faq-answer');
+                    const isOpen = question.classList.contains('open');
+                    
+                    faqItems.forEach(i => {
+                        i.querySelector('.faq-question').classList.remove('open');
+                        i.querySelector('.faq-answer').classList.add('hidden');
+                    });
+                    
+                    if (!isOpen) {
+                        question.classList.add('open');
+                        answer.classList.remove('hidden');
+                    }
+                });
+            });
+
+            // --- Estimator Tool Logic ---
+            const quizForm = document.getElementById('tvQuiz');
+            const totalPriceEl = document.getElementById('total-price');
+            const priceBreakdownEl = document.getElementById('price-breakdown');
+            const contactFormSection = document.getElementById('contact-form-section');
+            const resetButton = document.getElementById('reset-button');
+            const estimatedPriceField = document.getElementById('estimated_price_field');
+            const quoteDetailsField = document.getElementById('quote_details_field');
+            
+            const BASE_PRICE = 99;
+            let priceChart;
+
+            const priceData = {
+                base: { label: 'Base Install', price: BASE_PRICE },
+                tvSize: { label: 'Size Surcharge', price: 0 },
+                wallType: { label: 'Wall Surcharge', price: 0 },
+                hideCables: { label: 'Cable Concealment', price: 0 },
+                soundbar: { label: 'Soundbar Mount', price: 0 },
+                provideMount: { label: 'Provide Mount', price: 0 }
+            };
+
+            function updatePrice() {
+                const formData = new FormData(quizForm);
+                let total = BASE_PRICE;
+                let details = [];
+
+                Object.keys(priceData).forEach(key => {
+                    if (key !== 'base') priceData[key].price = 0;
+                });
+
+                const tvSize = formData.get('tvSize');
+                if (tvSize) {
+                    const selected = quizForm.querySelector(`input[name="tvSize"]:checked`);
+                    const price = parseInt(selected.dataset.price);
+                    total += price;
+                    priceData.tvSize.price = price;
+                    details.push(`TV Size: ${selected.nextElementSibling.textContent}`);
+                }
+
+                const wallType = formData.get('wallType');
+                if (wallType) {
+                    const selected = quizForm.querySelector(`input[name="wallType"]:checked`);
+                    const price = parseInt(selected.dataset.price);
+                    total += price;
+                    priceData.wallType.price = price;
+                    details.push(`Wall: ${selected.nextElementSibling.textContent}`);
+                }
+
+                const addOns = formData.getAll('addOns');
+                let addOnDetails = [];
+                addOns.forEach(addOn => {
+                    const selected = quizForm.querySelector(`input[value="${addOn}"]`);
+                    const price = parseInt(selected.dataset.price);
+                    total += price;
+                    priceData[addOn].price = price;
+                    addOnDetails.push(selected.nextElementSibling.textContent.replace(/🔌|🔊|💪/g, '').trim());
+                });
+                if(addOnDetails.length > 0) {
+                    details.push(`Add-ons: ${addOnDetails.join(', ')}`);
+                }
+                
+                totalPriceEl.textContent = `$${total}`;
+                estimatedPriceField.value = `$${total}`;
+                quoteDetailsField.value = details.join('; ');
+
+                updateBreakdown();
+                updatePriceChart();
+                
+                if (tvSize && wallType) {
+                    contactFormSection.classList.remove('hidden');
+                } else {
+                    contactFormSection.classList.add('hidden');
+                }
+            }
+            
+            function updateBreakdown() {
+                priceBreakdownEl.innerHTML = `<div class="flex justify-between items-center"><span class="text-gray-600">Base Installation</span><span class="font-semibold">$${BASE_PRICE}</span></div>`;
+                for (const key in priceData) {
+                    if (key !== 'base' && priceData[key].price > 0) {
+                        const item = document.createElement('div');
+                        item.className = 'flex justify-between items-center';
+                        item.innerHTML = `<span class="text-gray-600">${priceData[key].label}</span><span class="font-semibold">$${priceData[key].price}</span>`;
+                        priceBreakdownEl.appendChild(item);
+                    }
+                }
+            }
+
+            function createPriceChart() {
+                const ctx = document.getElementById('priceChart').getContext('2d');
+                priceChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: [],
+                        datasets: [{
+                            data: [],
+                            backgroundColor: ['#F97316', '#FB923C', '#FDBA74', '#FECACA', '#FED7AA', '#FFEDD5'],
+                            borderColor: '#FDF8F0',
+                            borderWidth: 4,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '70%',
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return `${context.label}: $${context.raw}`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            function updatePriceChart() {
+                const labels = [];
+                const data = [];
+                for (const key in priceData) {
+                    if (priceData[key].price > 0) {
+                        labels.push(priceData[key].label);
+                        data.push(priceData[key].price);
+                    }
+                }
+                priceChart.data.labels = labels;
+                priceChart.data.datasets[0].data = data;
+                priceChart.update();
+            }
+
+            quizForm.addEventListener('change', updatePrice);
+
+            resetButton.addEventListener('click', () => {
+                quizForm.reset();
+                contactFormSection.classList.add('hidden');
+                totalPriceEl.textContent = `$${BASE_PRICE}`;
+                Object.keys(priceData).forEach(key => {
+                     if (key !== 'base') priceData[key].price = 0;
+                });
+                priceData.base.price = BASE_PRICE;
+                updateBreakdown();
+                updatePriceChart();
+            });
+
+            async function handleSubmit(event) {
+                event.preventDefault();
+                const form = event.target;
+                const status = document.getElementById('form-status');
+                const data = new FormData(event.target);
+                
+                fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    if (response.ok) {
+                        status.innerHTML = "Thanks for your request! We'll be in touch soon.";
+                        status.className = 'block mt-4 p-3 rounded-md bg-green-100 text-green-800 border border-green-200 text-center';
+                        form.reset();
+                        resetButton.click();
+                    } else {
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                            } else {
+                                status.innerHTML = "Oops! There was a problem submitting your form"
+                            }
+                            status.className = 'block mt-4 p-3 rounded-md bg-red-100 text-red-800 border border-red-200 text-center';
+                        })
+                    }
+                }).catch(error => {
+                    status.innerHTML = "Oops! There was a problem submitting your form";
+                    status.className = 'block mt-4 p-3 rounded-md bg-red-100 text-red-800 border border-red-200 text-center';
+                });
+            }
+            quizForm.addEventListener("submit", handleSubmit);
+            
+            createPriceChart();
+            updatePrice();
+            
+            // *** NEW: Chart for the Infographic Section ***
+            const ctxPage = document.getElementById('servicesChartPage').getContext('2d');
+            new Chart(ctxPage, {
+                type: 'doughnut',
+                data: {
+                    labels: ['TV Mounting', ['In-Wall Wire', 'Concealment'], 'Soundbar Setup'],
+                    datasets: [{
+                        data: [55, 35, 10],
+                        backgroundColor: ['#118AB2', '#06D6A0', '#FFD166'],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 4,
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { size: 14, weight: '600' }, color: '#073B4C', padding: 20 }},
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    return Array.isArray(label) ? label.join(' ') : label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
