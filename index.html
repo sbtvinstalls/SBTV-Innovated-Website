@@ -249,7 +249,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 border-t border-gray-700">
         <div class="container mx-auto px-6 py-6 text-center text-gray-400">
-            <p>&copy; 2024 SBTV Installs. All Rights Reserved.</p>
+            <p>© 2024 SBTV Installs. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -262,34 +262,3 @@
         });
 
         // Instant Quote Logic
-        const calculateBtn = document.getElementById('calculateBtn');
-        const resultDiv = document.getElementById('result');
-        
-        calculateBtn.addEventListener('click', () => {
-            // --- Get Form Values ---
-            const tvSizeCost = parseFloat(document.getElementById('tvSize').value);
-            const mountTypeCost = parseFloat(document.getElementById('mountType').value);
-            
-            let additionalServicesCost = 0;
-            const featureCheckboxes = document.querySelectorAll('.feature-checkbox:checked');
-            featureCheckboxes.forEach(checkbox => {
-                additionalServicesCost += parseFloat(checkbox.dataset.cost);
-            });
-
-            // --- Calculation ---
-            const totalCost = tvSizeCost + mountTypeCost + additionalServicesCost;
-
-            // --- Display Results ---
-            const costResult = document.getElementById('costResult');
-            const formatCurrency = (num) => `$${num.toLocaleString()}`;
-            
-            costResult.textContent = `${formatCurrency(totalCost)}`;
-            
-            resultDiv.classList.remove('hidden');
-            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
-    </script>
-
-</body>
-</html>
-
