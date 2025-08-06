@@ -1,250 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SBTV Installs - The Smart Choice for TV Mounting</title>
+    <title>InnovateTech - Custom Software Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F3F4F6; /* Light Gray Background */
         }
-        .card {
-            background-color: #FFFFFF;
-            border-radius: 0.75rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            padding: 2rem;
-            margin-bottom: 2rem;
+        .hero-bg {
+            background-color: #111827;
+            background-image: radial-gradient(circle at 1px 1px, #374151 1px, transparent 0);
+            background-size: 20px 20px;
         }
-        .text-balance {
-            text-wrap: balance;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 400px;
-        }
-        /* Simple spinner for loading state */
-        .spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border-left-color: #06D6A0;
-            animation: spin 1s ease infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(59, 130, 246, 0.3);
         }
     </style>
 </head>
-<body class="antialiased">
-    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+<body class="bg-gray-900 text-white">
 
-        <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-black text-[#073B4C]">Ditch the Wires, Embrace the View</h1>
-            <p class="mt-4 text-lg text-gray-600 text-balance">An inside look at how SBTV Installs delivers the perfect TV setup, every time.</p>
-        </header>
-
-        <div class="card grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div class="text-center p-6 border-r-0 md:border-r-2 border-dashed border-gray-200">
-                <h2 class="text-2xl font-bold text-[#FF6B6B]">The Problem</h2>
-                <p class="text-6xl mt-4">&#x1F9F0;&#x1F50C;</p>
-                <p class="mt-4 text-gray-600">You bought a beautiful new TV, but now you're stuck with a mess of cables and the stress of mounting it securely.</p>
-            </div>
-            <div class="text-center p-6">
-                <h2 class="text-2xl font-bold text-[#06D6A0]">The Solution</h2>
-                 <p class="text-6xl mt-4">&#x1F4FA;&#x2728;</p>
-                <p class="mt-4 text-gray-600">SBTV Installs provides a fast, professional service that guarantees a flawless finish with zero guesswork.</p>
-            </div>
+    <!-- Header -->
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white">Innovate<span class="text-blue-500">Tech</span></h1>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#services" class="hover:text-blue-400 transition-colors">Services</a>
+                <a href="#estimator" class="hover:text-blue-400 transition-colors">AI Estimator</a>
+                <a href="#process" class="hover:text-blue-400 transition-colors">Our Process</a>
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-transform hover:scale-105">Contact Us</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#services" class="block px-6 py-2 text-sm hover:bg-gray-800">Services</a>
+            <a href="#estimator" class="block px-6 py-2 text-sm hover:bg-gray-800">AI Estimator</a>
+            <a href="#process" class="block px-6 py-2 text-sm hover:bg-gray-800">Our Process</a>
+            <a href="#about" class="block px-6 py-2 text-sm hover:bg-gray-800">About</a>
+            <a href="#contact" class="block px-6 py-2 text-sm hover:bg-gray-800">Contact Us</a>
+        </div>
+    </header>
 
-        <div class="card">
-            <h2 class="text-center text-3xl font-extrabold text-[#073B4C] mb-8">What We Promise (& Deliver!)</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div class="flex items-start space-x-4">
-                    <div class="text-3xl">⭐</div>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg py-24 md:py-32">
+            <div class="container mx-auto text-center px-6">
+                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-4">Build the Future with <span class="text-blue-500">Custom Software</span></h2>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">We transform your ideas into powerful, scalable, and secure software solutions that drive business growth.</p>
+                <a href="#estimator" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform hover:scale-105 inline-block glow-effect">Get an Instant AI Estimate</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold">Our Core Services</h3>
+                    <p class="text-gray-400 mt-2">Solutions tailored to meet your unique business needs.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 hover:border-blue-500 hover:scale-105 transition-all duration-300">
+                        <div class="text-blue-500 mb-4">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2">Web Application Development</h4>
+                        <p class="text-gray-400">Creating responsive, high-performance web apps with modern frameworks like React, Vue, and Angular.</p>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 hover:border-blue-500 hover:scale-105 transition-all duration-300">
+                        <div class="text-blue-500 mb-4">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2">Mobile App Development</h4>
+                        <p class="text-gray-400">Building beautiful and intuitive native and cross-platform mobile apps for iOS and Android.</p>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 hover:border-blue-500 hover:scale-105 transition-all duration-300">
+                        <div class="text-blue-500 mb-4">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h8a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.8 9.928l.345-3.453A2 2 0 0110.095 4.5h3.81a2 2 0 011.95 1.975l.345 3.453M12 12h.01M12 15h.01"></path></svg>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2">AI & Machine Learning</h4>
+                        <p class="text-gray-400">Leveraging AI to create intelligent systems that automate processes, provide insights, and drive innovation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Estimator Section -->
+        <section id="estimator" class="py-20 bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold">AI-Powered Project Estimator</h3>
+                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto">Answer a few questions and our AI will provide a preliminary estimate for your project's cost and timeline.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-gray-800 p-8 rounded-xl border border-gray-700">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Form Inputs -->
+                        <div>
+                            <label for="projectType" class="block text-sm font-medium text-gray-300 mb-2">Project Type</label>
+                            <select id="projectType" class="w-full bg-gray-700 border-gray-600 text-white rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="1">Web Application</option>
+                                <option value="1.2">Mobile App</option>
+                                <option value="1.5">Cloud Solution</option>
+                                <option value="2">AI/ML Project</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="pages" class="block text-sm font-medium text-gray-300 mb-2">Number of Pages/Screens: <span id="pagesValue" class="text-blue-400 font-bold">25</span></label>
+                            <input id="pages" type="range" min="1" max="50" value="25" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
+                        </div>
+                        <div class="md:col-span-2">
+                             <label class="block text-sm font-medium text-gray-300 mb-2">Key Features</label>
+                             <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                <div><label class="flex items-center space-x-2"><input type="checkbox" data-cost="1.2" class="feature-checkbox rounded bg-gray-700 border-gray-600 text-blue-500 focus:ring-blue-500"><span>User Login</span></label></div>
+                                <div><label class="flex items-center space-x-2"><input type="checkbox" data-cost="1.5" class="feature-checkbox rounded bg-gray-700 border-gray-600 text-blue-500 focus:ring-blue-500"><span>Payments</span></label></div>
+                                <div><label class="flex items-center space-x-2"><input type="checkbox" data-cost="1.3" class="feature-checkbox rounded bg-gray-700 border-gray-600 text-blue-500 focus:ring-blue-500"><span>Admin Panel</span></label></div>
+                                <div><label class="flex items-center space-x-2"><input type="checkbox" data-cost="1.4" class="feature-checkbox rounded bg-gray-700 border-gray-600 text-blue-500 focus:ring-blue-500"><span>Real-time Chat</span></label></div>
+                                <div><label class="flex items-center space-x-2"><input type="checkbox" data-cost="1.2" class="feature-checkbox rounded bg-gray-700 border-gray-600 text-blue-500 focus:ring-blue-500"><span>Analytics</span></label></div>
+                                <div><label class="flex items-center space-x-2"><input type="checkbox" data-cost="1.1" class="feature-checkbox rounded bg-gray-700 border-gray-600 text-blue-500 focus:ring-blue-500"><span>CMS</span></label></div>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <button id="calculateBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform hover:scale-105">Calculate My Estimate</button>
+                    </div>
+                </div>
+                <!-- Result Display -->
+                <div id="result" class="hidden mt-8 max-w-4xl mx-auto bg-gray-800/50 p-8 rounded-xl border-2 border-dashed border-blue-500 text-center">
+                    <p class="text-gray-300 mb-2">Preliminary AI-Generated Estimate:</p>
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
+                        <div>
+                            <p class="text-lg text-gray-400">Estimated Cost</p>
+                            <p id="costResult" class="text-3xl md:text-4xl font-bold text-blue-400"></p>
+                        </div>
+                        <div class="border-l-0 md:border-l-2 border-gray-600 h-16 hidden md:block"></div>
+                        <div>
+                            <p class="text-lg text-gray-400">Estimated Timeline</p>
+                            <p id="timeResult" class="text-3xl md:text-4xl font-bold text-blue-400"></p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-6">*This is a rough estimate for budgetary purposes only. A detailed quote will be provided after a consultation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infographic Section -->
+        <section id="process" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl md:text-4xl font-bold">Our Proven Development Lifecycle</h3>
+                    <p class="text-gray-400 mt-2">From idea to launch, we follow a structured process to ensure success.</p>
+                </div>
+                <div class="relative">
+                    <!-- The connecting line -->
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-700 -translate-y-1/2"></div>
+                    <div class="md:hidden absolute top-0 left-10 w-0.5 h-full bg-gray-700 -translate-x-1/2"></div>
+                    
+                    <div class="relative flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0">
+                        <!-- Step 1 -->
+                        <div class="flex items-start md:flex-col md:items-center text-center w-full md:w-1/6">
+                            <div class="bg-gray-800 border-2 border-blue-500 rounded-full w-20 h-20 flex-shrink-0 flex items-center justify-center z-10 mb-2 md:mb-4 mr-4 md:mr-0">
+                                <span class="text-3xl">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Discovery</h4>
+                                <p class="text-sm text-gray-400">We start by understanding your vision, goals, and requirements.</p>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="flex items-start md:flex-col md:items-center text-center w-full md:w-1/6">
+                            <div class="bg-gray-800 border-2 border-blue-500 rounded-full w-20 h-20 flex-shrink-0 flex items-center justify-center z-10 mb-2 md:mb-4 mr-4 md:mr-0">
+                               <span class="text-3xl">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Design</h4>
+                                <p class="text-sm text-gray-400">Our team creates intuitive UI/UX designs and wireframes.</p>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="flex items-start md:flex-col md:items-center text-center w-full md:w-1/6">
+                            <div class="bg-gray-800 border-2 border-blue-500 rounded-full w-20 h-20 flex-shrink-0 flex items-center justify-center z-10 mb-2 md:mb-4 mr-4 md:mr-0">
+                               <span class="text-3xl">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Develop</h4>
+                                <p class="text-sm text-gray-400">We write clean, efficient, and scalable code.</p>
+                            </div>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="flex items-start md:flex-col md:items-center text-center w-full md:w-1/6">
+                            <div class="bg-gray-800 border-2 border-blue-500 rounded-full w-20 h-20 flex-shrink-0 flex items-center justify-center z-10 mb-2 md:mb-4 mr-4 md:mr-0">
+                               <span class="text-3xl">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Test</h4>
+                                <p class="text-sm text-gray-400">Rigorous testing ensures a bug-free, reliable product.</p>
+                            </div>
+                        </div>
+                        <!-- Step 5 -->
+                        <div class="flex items-start md:flex-col md:items-center text-center w-full md:w-1/6">
+                            <div class="bg-gray-800 border-2 border-blue-500 rounded-full w-20 h-20 flex-shrink-0 flex items-center justify-center z-10 mb-2 md:mb-4 mr-4 md:mr-0">
+                               <span class="text-3xl">5</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Deploy</h4>
+                                <p class="text-sm text-gray-400">We handle the launch process for a smooth release.</p>
+                            </div>
+                        </div>
+                         <!-- Step 6 -->
+                        <div class="flex items-start md:flex-col md:items-center text-center w-full md:w-1/6">
+                            <div class="bg-gray-800 border-2 border-blue-500 rounded-full w-20 h-20 flex-shrink-0 flex items-center justify-center z-10 mb-2 md:mb-4 mr-4 md:mr-0">
+                               <span class="text-3xl">6</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Support</h4>
+                                <p class="text-sm text-gray-400">Ongoing maintenance and support to keep your app running.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h3 class="font-bold text-[#118AB2]">5-Star Mounting & Wire Hiding</h3>
-                        <p class="text-gray-600">We treat every home with care, ensuring a secure and stunning installation every time.</p>
+                        <h3 class="text-3xl md:text-4xl font-bold mb-4">Who We Are</h3>
+                        <p class="text-gray-400 mb-4">InnovateTech is a team of passionate developers, designers, and strategists dedicated to crafting exceptional digital experiences. We believe in the power of technology to solve problems and create opportunities.</p>
+                        <p class="text-gray-400">Our mission is to become a trusted technology partner for our clients, delivering not just code, but real business value through innovation, quality, and a commitment to success.</p>
                     </div>
-                </div>
-                <div class="flex items-start space-x-4">
-                    <div class="text-3xl">🔌</div>
-                    <div>
-                        <h3 class="font-bold text-[#118AB2]">Say Goodbye to Wires</h3>
-                        <p class="text-gray-600">Our specialty is clean, in-wall cable hiding for a sleek, floating TV look.</p>
-                    </div>
-                </div>
-                <div class="flex items-start space-x-4">
-                    <div class="text-3xl">🔊</div>
-                    <div>
-                        <h3 class="font-bold text-[#118AB2]">Perfect Soundbar Setups</h3>
-                        <p class="text-gray-600">We'll mount your soundbar seamlessly for a fully integrated audio-visual experience.</p>
-                    </div>
-                </div>
-                <div class="flex items-start space-x-4">
-                    <div class="text-3xl">🛡️</div>
-                    <div>
-                        <h3 class="font-bold text-[#118AB2]">Lifetime Warranty on All Work</h3>
-                        <p class="text-gray-600">We stand by our quality with a lifetime guarantee, giving you complete peace of mind.</p>
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400/1F2937/4B5563?text=Our+Team" alt="Our Team" class="rounded-lg shadow-2xl w-full">
+                        <div class="absolute -top-4 -right-4 w-24 h-24 bg-blue-600 rounded-full opacity-50"></div>
+                        <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-gray-700 rounded-lg opacity-50"></div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="card">
-            <h2 class="text-center text-3xl font-extrabold text-[#073B4C] mb-2">✨ AI Setup Recommender</h2>
-            <p class="text-center text-gray-600 mb-6 text-balance">Not sure what you need? Describe your room and your goal, and our AI expert will recommend the perfect setup!</p>
-            <div class="space-y-4">
-                <textarea id="ai-prompt-input" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD166] focus:border-[#FFD166] transition" rows="3" placeholder="e.g., 'I have a big living room with brick walls. I love watching movies and hate seeing wires.'"></textarea>
-                <button id="ai-recommend-button" class="w-full bg-[#118AB2] text-white font-bold text-lg py-3 px-8 rounded-lg shadow-lg hover:bg-[#073B4C] transition-all transform hover:scale-105 flex items-center justify-center">
-                    Get My AI Recommendation
-                </button>
-                <div id="ai-loading-indicator" class="hidden flex justify-center items-center py-4">
-                    <div class="spinner"></div>
-                    <p class="ml-4 text-gray-600 font-semibold">Our AI expert is thinking...</p>
-                </div>
-                <div id="ai-result-output" class="hidden p-4 bg-gray-50 border border-gray-200 rounded-lg text-gray-700"></div>
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-3xl md:text-4xl font-bold">Ready to Start Your Project?</h3>
+                <p class="text-gray-400 mt-2 mb-8 max-w-2xl mx-auto">Let's talk about your ideas and how we can help you achieve your goals. Reach out to us for a free, no-obligation consultation.</p>
+                <a href="mailto:contact@innovatetech.com" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform hover:scale-105 inline-block glow-effect">Get In Touch</a>
             </div>
-        </div>
-        
-        <div class="card">
-            <h2 class="text-center text-3xl font-extrabold text-[#073B4C] mb-4">What Our Customers Ask For</h2>
-            <p class="text-center text-gray-600 mb-8">While we do it all, these are our most popular requests. Wire concealment is a game-changer for a clean look!</p>
-            <div class="chart-container">
-                <canvas id="servicesChart"></canvas>
-            </div>
-        </div>
+        </section>
+    </main>
 
-        <div class="card">
-            <h2 class="text-center text-3xl font-extrabold text-[#073B4C] mb-8">Your 60-Second Path to Perfection</h2>
-            <div class="relative">
-                <div class="absolute left-6 top-6 bottom-6 w-0.5 bg-gray-200 border-l-2 border-dashed border-gray-300 hidden sm:block"></div>
-                <div class="space-y-8">
-                    <div class="flex items-center space-x-4">
-                        <div class="z-10 flex-shrink-0 w-12 h-12 flex items-center justify-center bg-[#FFD166] text-[#073B4C] rounded-full font-black text-xl">1</div>
-                        <div><h3 class="font-bold text-lg text-[#073B4C]">Visit Our Website</h3><p class="text-gray-600">Click the link and head to our Instant Quote tool.</p></div>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="z-10 flex-shrink-0 w-12 h-12 flex items-center justify-center bg-[#FF6B6B] text-white rounded-full font-black text-xl">2</div>
-                        <div><h3 class="font-bold text-lg text-[#073B4C]">Build Your Setup</h3><p class="text-gray-600">Select your TV size, wall type, and any add-ons like wire hiding.</p></div>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="z-10 flex-shrink-0 w-12 h-12 flex items-center justify-center bg-[#06D6A0] text-white rounded-full font-black text-xl">3</div>
-                        <div><h3 class="font-bold text-lg text-[#073B4C]">Get Your Instant Price</h3><p class="text-gray-600">See your transparent, upfront price immediately. No waiting!</p></div>
-                    </div>
-                     <div class="flex items-center space-x-4">
-                        <div class="z-10 flex-shrink-0 w-12 h-12 flex items-center justify-center bg-[#118AB2] text-white rounded-full font-black text-xl">4</div>
-                        <div><h3 class="font-bold text-lg text-[#073B4C]">Book Your Appointment</h3><p class="text-gray-600">If you like the price, enter your details to get on our schedule!</p></div>
-                    </div>
-                </div>
-            </div>
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-gray-700">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-400">
+            <p>&copy; 2024 InnovateTech. All Rights Reserved.</p>
         </div>
-        
-        <div class="text-center py-12">
-            <h2 class="text-3xl md:text-4xl font-black text-[#073B4C] text-balance">Ready to Transform Your Living Room?</h2>
-            <p class="mt-4 text-lg text-gray-600 max-w-xl mx-auto text-balance">Stop guessing and start planning. Get your free, instant quote now and see how affordable a perfect setup can be.</p>
-            <a href="https://sbtvinstalls.github.io/SBTV.MOUNT.QUIZ/" target="_blank" class="mt-8 inline-block bg-[#FF6B6B] text-white font-bold text-lg py-4 px-10 rounded-lg shadow-lg hover:bg-red-500 transition-all transform hover:scale-105">
-                Get My Instant Quote
-            </a>
-        </div>
-
-    </div>
+    </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const servicesChartCtx = document.getElementById('servicesChart').getContext('2d');
-            new Chart(servicesChartCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['TV Mounting', ['In-Wall Wire', 'Concealment'], 'Soundbar Setup'],
-                    datasets: [{
-                        label: 'Most Requested Services',
-                        data: [55, 35, 10],
-                        backgroundColor: ['#118AB2', '#06D6A0', '#FFD166'],
-                        borderColor: '#FFFFFF',
-                        borderWidth: 4,
-                        hoverOffset: 10
-                    }]
-                },
-                options: {
-                    responsive: true, maintainAspectRatio: false,
-                    plugins: {
-                        legend: { position: 'bottom', labels: { font: { size: 14, weight: '600' }, color: '#073B4C', padding: 20 }},
-                        tooltip: {
-                            callbacks: {
-                                title: function(tooltipItems) {
-                                    const item = tooltipItems[0];
-                                    let label = item.chart.data.labels[item.dataIndex];
-                                    return Array.isArray(label) ? label.join(' ') : label;
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-
-            const aiButton = document.getElementById('ai-recommend-button');
-            const aiInput = document.getElementById('ai-prompt-input');
-            const aiLoader = document.getElementById('ai-loading-indicator');
-            const aiResult = document.getElementById('ai-result-output');
-
-            /**
-             * MODIFICATION: This function now securely calls the AI model.
-             * The original fetch() call was removed because including API keys
-             * in client-side code is a major security risk. This new function
-             * uses a secure, server-side method to get the recommendation.
-             */
-            async function getAiRecommendation(promptText) {
-                const systemPrompt = `You are a friendly and helpful home theater expert for a company called "SBTV Installs". Your goal is to give a short, encouraging recommendation based on the customer's description. Always recommend one or more of our specific services: "TV Mounting", "In-Wall Cable Concealment", and "Soundbar Mounting". Keep the tone positive and conversational.`;
-                
-                // This is a placeholder for where the AI model would be called.
-                // In a real application, this would be a call to a backend service.
-                // For this demonstration, we are using the built-in AI capabilities.
-                const fullPrompt = `${systemPrompt}\n\nCustomer description: "${promptText}"`;
-                
-                // This simulates the AI call and returns a pre-canned response for demonstration
-                // In a live environment, you would get the response from the model
-                const response = await ai.prompt(fullPrompt);
-                return response;
-            }
-
-            aiButton.addEventListener('click', async () => {
-                const userInput = aiInput.value.trim();
-                if (!userInput) {
-                    aiResult.textContent = 'Please describe your room and what you want first!';
-                    aiResult.classList.remove('hidden');
-                    return;
-                }
-
-                aiResult.classList.add('hidden');
-                aiLoader.classList.remove('hidden');
-                aiButton.disabled = true;
-
-                try {
-                    const recommendation = await getAiRecommendation(userInput);
-                    aiResult.textContent = recommendation;
-                } catch (error) {
-                    console.error("AI Error:", error);
-                    aiResult.textContent = "There was an issue connecting to our AI expert. Please try again in a moment.";
-                } finally {
-                    aiLoader.classList.add('hidden');
-                    aiResult.classList.remove('hidden');
-                    aiButton.disabled = false;
-                }
-            });
-        });
-    </script>
-
-</body>
-</html>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEve
