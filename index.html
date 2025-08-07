@@ -1,264 +1,172 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SBTV Installs - Professional TV Mounting</title>
-    <meta name="description" content="Professional, secure, and clean TV installation services for your home or business. Specializing in wall mounting, wire concealment, and soundbar setup.">
-    <link rel="canonical" href="https://sbtvinstalls.github.io/SBTV-Innovated-Website/" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
         .hero-bg {
-            background-color: #111827;
-            background-image: radial-gradient(circle at 1px 1px, #374151 1px, transparent 0);
-            background-size: 20px 20px;
+            background-color: #111827; /* Deep Dark Blue */
         }
-        .glow-effect {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(59, 130, 246, 0.3);
+        .accent-orange {
+            color: #F97316;
+        }
+        .bg-accent-orange {
+            background-color: #F97316;
+        }
+        .bg-accent-orange-hover:hover {
+            background-color: #EA580C;
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-white">
 
-    <!-- Header -->
-    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-white">SBTV<span class="text-blue-500">Installs</span></h1>
-            <nav class="hidden md:flex space-x-8 items-center">
-                <a href="#services" class="hover:text-blue-400 transition-colors">Services</a>
-                <a href="#estimator" class="hover:text-blue-400 transition-colors">Instant Quote</a>
-                <a href="#process" class="hover:text-blue-400 transition-colors">Our Process</a>
-                <a href="#gallery" class="hover:text-blue-400 transition-colors">Gallery</a>
-                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-transform hover:scale-105">Contact Us</a>
-            </nav>
-            <button id="mobile-menu-button" class="md:hidden text-white">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#services" class="block px-6 py-2 text-sm hover:bg-gray-800">Services</a>
-            <a href="#estimator" class="block px-6 py-2 text-sm hover:bg-gray-800">Instant Quote</a>
-            <a href="#process" class="block px-6 py-2 text-sm hover:bg-gray-800">Our Process</a>
-            <a href="#gallery" class="block px-6 py-2 text-sm hover:bg-gray-800">Gallery</a>
-            <a href="#contact" class="block px-6 py-2 text-sm hover:bg-gray-800">Contact Us</a>
-        </div>
+    <header class="hero-bg shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold">SBTV Installs</h1>
+            <ul class="flex items-center space-x-6">
+                <li><a href="#services" class="hover:text-accent-orange transition">Services</a></li>
+                <li><a href="#estimator" class="hover:text-accent-orange transition">Get a Quote</a></li>
+                <li><a href="#contact" class="bg-accent-orange text-white px-4 py-2 rounded-md hover:bg-accent-orange-hover transition">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-bg py-24 md:py-32">
-            <div class="container mx-auto text-center px-6">
-                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-4">Perfect TV Mounting, <span class="text-blue-500">Every Time</span></h2>
-                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">Professional, secure, and clean TV installation services for your home or business. No wires, no mess, just a flawless setup.</p>
-                <a href="#estimator" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform hover:scale-105 inline-block glow-effect">Get an Instant Quote</a>
-            </div>
-        </section>
+    <section class="hero-bg py-20 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold mb-4">Flawless TV Mounting, Professional Results.</h2>
+            <p class="text-xl text-gray-300 mb-8">Serving Moreno Valley with fast, reliable, and clean installations.</p>
+            <a href="#estimator" class="bg-accent-orange text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-accent-orange-hover transition-transform transform hover:scale-105">Get Your Instant Quote</a>
+        </div>
+    </section>
 
-        <!-- Services Section -->
-        <section id="services" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h3 class="text-3xl md:text-4xl font-bold">Our Installation Services</h3>
-                    <p class="text-gray-400 mt-2">Solutions for every wall type and setup.</p>
+    <section id="services" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold mb-12">Our Services</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 p-8 rounded-lg">
+                    <h4 class="text-2xl font-bold mb-3 accent-orange">Standard Wall Mounting</h4>
+                    <p>Secure and level mounting on drywall with hidden wires for a clean, modern look.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service Card 1 -->
-                    <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 hover:border-blue-500 hover:scale-105 transition-all duration-300">
-                        <div class="text-blue-500 mb-4">
-                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <h4 class="text-2xl font-bold mb-2">Standard Wall Mounting</h4>
-                        <p class="text-gray-400">Secure mounting on drywall, with TVs perfectly leveled. Includes connecting your devices.</p>
-                    </div>
-                    <!-- Service Card 2 -->
-                    <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 hover:border-blue-500 hover:scale-105 transition-all duration-300">
-                        <div class="text-blue-500 mb-4">
-                           <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
-                        </div>
-                        <h4 class="text-2xl font-bold mb-2">Fireplace & Brick Mounting</h4>
-                        <p class="text-gray-400">Specialized installation above fireplaces or on brick and concrete surfaces for a dramatic look.</p>
-                    </div>
-                    <!-- Service Card 3 -->
-                    <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 hover:border-blue-500 hover:scale-105 transition-all duration-300">
-                        <div class="text-blue-500 mb-4">
-                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                        </div>
-                        <h4 class="text-2xl font-bold mb-2">In-Wall Wire Concealment</h4>
-                        <p class="text-gray-400">A clean, professional finish with all cables hidden inside the wall for a true "floating TV" effect.</p>
-                    </div>
+                <div class="bg-gray-900 p-8 rounded-lg">
+                    <h4 class="text-2xl font-bold mb-3 accent-orange">Fireplace Mounting</h4>
+                    <p>Expert installation above any fireplace type, ensuring safety and optimal viewing angles.</p>
+                </div>
+                <div class="bg-gray-900 p-8 rounded-lg">
+                    <h4 class="text-2xl font-bold mb-3 accent-orange">Sound Bar Installation</h4>
+                    <p>Complete your home theater experience with professionally mounted and integrated sound systems.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Instant Quote Estimator Section -->
-        <section id="estimator" class="py-20 bg-gray-900/50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h3 class="text-3xl md:text-4xl font-bold">Get an Instant Quote</h3>
-                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto">Select your options to get a quick, upfront estimate for your TV installation.</p>
-                </div>
-                <div class="max-w-4xl mx-auto bg-gray-800 p-8 rounded-xl border border-gray-700">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Form Inputs -->
+    <section id="estimator" class="py-20">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center mb-12">Instant Installation Estimate</h3>
+            <div class="max-w-4xl mx-auto bg-gray-800 p-8 rounded-lg shadow-xl">
+                <form id="quote-form" action="https://formspree.io/f/xyzjraer" method="POST">
+                    <div class="grid md:grid-cols-2 gap-8 mb-6">
                         <div>
-                            <label for="tvSize" class="block text-sm font-medium text-gray-300 mb-2">TV Size</label>
-                            <select id="tvSize" class="w-full bg-gray-700 border-gray-600 text-white rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500">
-                                <option value="100">Up to 42"</option>
-                                <option value="125">43" - 55"</option>
-                                <option value="150">56" - 70"</option>
-                                <option value="200">71" - 85"</option>
-                                <option value="250">86" and larger</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="mountType" class="block text-sm font-medium text-gray-300 mb-2">Mount Type</label>
-                             <select id="mountType" class="w-full bg-gray-700 border-gray-600 text-white rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500">
-                                <option value="25">Fixed / Tilting Mount</option>
-                                <option value="50">Full-Motion Mount</option>
-                                <option value="75">Ceiling Mount</option>
-                            </select>
-                        </div>
-                        <div class="md:col-span-2">
-                             <label class="block text-sm font-medium text-gray-300 mb-2">Additional Services</label>
-                             <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                                <div><label class="flex items-center space-x-2"><input type="checkbox" data-cost="75" class="feature-checkbox rounded bg-gray-700 border-gray-600 text-blue-500 focus:ring-blue-500"><span>Wire Concealment</span></label></div>
-                                <div><label class="flex items-center space-x-2"><input type="checkbox" data-cost="50" class="feature-checkbox rounded bg-gray-700 border-gray-600 text-blue-500 focus:ring-blue-500"><span>Soundbar Mounting</span></label></div>
-                                <div><label class="flex items-center space-x-2"><input type="checkbox" data-cost="25" class="feature-checkbox rounded bg-gray-700 border-gray-600 text-blue-500 focus:ring-blue-500"><span>Device Setup</span></label></div>
-                                <div><label class="flex items-center space-x-2"><input type="checkbox" data-cost="75" class="feature-checkbox rounded bg-gray-700 border-gray-600 text-blue-500 focus:ring-blue-500"><span>Install on Brick</span></label></div>
-                                <div><label class="flex items-center space-x-2"><input type="checkbox" data-cost="25" class="feature-checkbox rounded bg-gray-700 border-gray-600 text-blue-500 focus:ring-blue-500"><span>TV Dismount</span></label></div>
-                                <div><label class="flex items-center space-x-2"><input type="checkbox" data-cost="0" class="feature-checkbox rounded bg-gray-700 border-gray-600 text-blue-500 focus:ring-blue-500"><span>I have my own mount</span></label></div>
-                             </div>
-                        </div>
-                    </div>
-                    <div class="text-center mt-8">
-                        <button id="calculateBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform hover:scale-105">Calculate My Estimate</button>
-                    </div>
-                </div>
-                <!-- Result Display -->
-                <div id="result" class="hidden mt-8 max-w-4xl mx-auto bg-gray-800/50 p-8 rounded-xl border-2 border-dashed border-blue-500 text-center">
-                    <p class="text-gray-300 mb-2">Your Estimated Installation Cost:</p>
-                    <p id="costResult" class="text-4xl md:text-5xl font-bold text-blue-400"></p>
-                    <p class="text-xs text-gray-500 mt-6">*This is a preliminary estimate for standard installations. Complex setups may require an in-person quote.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Infographic Process Section -->
-        <section id="process" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h3 class="text-3xl md:text-4xl font-bold">Our Simple 4-Step Process</h3>
-                    <p class="text-gray-400 mt-2">We make professional TV mounting easy and stress-free.</p>
-                </div>
-                <div class="relative">
-                    <!-- The connecting line -->
-                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-700 -translate-y-1/2"></div>
-                    <div class="md:hidden absolute top-0 left-10 w-0.5 h-full bg-gray-700 -translate-x-1/2"></div>
-                    
-                    <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-4">
-                        <!-- Step 1 -->
-                        <div class="flex items-start md:flex-col md:items-center text-center w-full md:w-1/4">
-                            <div class="bg-gray-800 border-2 border-blue-500 rounded-full w-20 h-20 flex-shrink-0 flex items-center justify-center z-10 mb-2 md:mb-4 mr-4 md:mr-0">
-                                <span class="text-3xl">1</span>
+                            <h4 class="text-2xl font-semibold mb-6 border-b border-gray-600 pb-2">1. Choose Your Options</h4>
+                            <div class="mb-4">
+                                <label for="tv-size" class="block text-lg mb-2">TV Size:</label>
+                                <select id="tv-size" name="tv_size" class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-accent-orange">
+                                    <option value="100">Up to 55"</option>
+                                    <option value="125">56" - 75"</option>
+                                    <option value="150">76" and larger</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="wall-type" class="block text-lg mb-2">Wall Type:</label>
+                                <select id="wall-type" name="wall_type" class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-accent-orange">
+                                    <option value="0">Drywall</option>
+                                    <option value="25">Brick / Fireplace</option>
+                                </select>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg mb-1">Consultation</h4>
-                                <p class="text-sm text-gray-400">We discuss placement, viewing angles, and wire concealment options with you.</p>
+                                <label class="block text-lg mb-2">Add-ons:</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center"><input type="checkbox" data-cost="50" class="addon mr-2 h-5 w-5 bg-gray-700 border-gray-600 rounded text-accent-orange focus:ring-accent-orange"> Hide Wires (In-wall)</label>
+                                    <label class="flex items-center"><input type="checkbox" data-cost="30" class="addon mr-2 h-5 w-5 bg-gray-700 border-gray-600 rounded text-accent-orange focus:ring-accent-orange"> Sound Bar Mounting</label>
+                                </div>
                             </div>
                         </div>
-                        <!-- Step 2 -->
-                        <div class="flex items-start md:flex-col md:items-center text-center w-full md:w-1/4">
-                            <div class="bg-gray-800 border-2 border-blue-500 rounded-full w-20 h-20 flex-shrink-0 flex items-center justify-center z-10 mb-2 md:mb-4 mr-4 md:mr-0">
-                               <span class="text-3xl">2</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg mb-1">Secure Mounting</h4>
-                                <p class="text-sm text-gray-400">We securely attach the mount to wall studs, ensuring a safe and stable installation.</p>
-                            </div>
-                        </div>
-                        <!-- Step 3 -->
-                        <div class="flex items-start md:flex-col md:items-center text-center w-full md:w-1/4">
-                            <div class="bg-gray-800 border-2 border-blue-500 rounded-full w-20 h-20 flex-shrink-0 flex items-center justify-center z-10 mb-2 md:mb-4 mr-4 md:mr-0">
-                               <span class="text-3xl">3</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg mb-1">Hang & Connect</h4>
-                                <p class="text-sm text-gray-400">Your TV is carefully hung and leveled. We connect your devices and hide the wires.</p>
-                            </div>
-                        </div>
-                        <!-- Step 4 -->
-                        <div class="flex items-start md:flex-col md:items-center text-center w-full md:w-1/4">
-                            <div class="bg-gray-800 border-2 border-blue-500 rounded-full w-20 h-20 flex-shrink-0 flex items-center justify-center z-10 mb-2 md:mb-4 mr-4 md:mr-0">
-                               <span class="text-3xl">4</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg mb-1">Cleanup & Review</h4>
-                                <p class="text-sm text-gray-400">We clean the work area and walk you through the final setup to ensure you're 100% happy.</p>
-                            </div>
+                        <div class="bg-gray-900 p-6 rounded-lg flex flex-col items-center justify-center text-center">
+                            <h4 class="text-2xl font-semibold mb-4">Your Estimated Price</h4>
+                            <p class="text-6xl font-bold accent-orange" id="total-price">$100</p>
+                            <p class="text-gray-400 mt-2">Final price confirmed on-site.</p>
                         </div>
                     </div>
-                </div>
+                    <div id="contact" class="mt-10 border-t border-gray-600 pt-6">
+                        <h4 class="text-2xl font-semibold mb-6">2. Get Your Quote</h4>
+                        <div class="grid md:grid-cols-2 gap-6 mb-4">
+                           <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-accent-orange">
+                           <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-accent-orange">
+                        </div>
+                        <textarea name="message" placeholder="Any additional details? (optional)" rows="4" class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-accent-orange"></textarea>
+                        <input type="hidden" id="estimated_price" name="estimated_price" value="$100">
+                        <button type="submit" class="w-full mt-6 bg-accent-orange text-white text-lg font-semibold py-3 rounded-lg hover:bg-accent-orange-hover transition">Submit Quote Request</button>
+                    </div>
+                </form>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Gallery Section -->
-        <section id="gallery" class="py-20 bg-gray-800">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h3 class="text-3xl md:text-4xl font-bold">Our Work</h3>
-                    <p class="text-gray-400 mt-2">See the quality and precision in every installation.</p>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="grid gap-4">
-                        <div><img class="h-auto max-w-full rounded-lg hover:scale-105 transition-transform" src="https://placehold.co/500x700/1F2937/4B5563?text=Clean+Install" alt="Clean TV installation with no wires showing"></div>
-                        <div><img class="h-auto max-w-full rounded-lg hover:scale-105 transition-transform" src="https://placehold.co/500x400/1F2937/4B5563?text=Fireplace+Mount" alt="TV mounted securely over a fireplace"></div>
-                    </div>
-                    <div class="grid gap-4">
-                        <div><img class="h-auto max-w-full rounded-lg hover:scale-105 transition-transform" src="https://placehold.co/500x400/1F2937/4B5563?text=Full+Motion" alt="TV on a full-motion mount"></div>
-                        <div><img class="h-auto max-w-full rounded-lg hover:scale-105 transition-transform" src="https://placehold.co/500x700/1F2937/4B5563?text=Living+Room+Setup" alt="Living room entertainment setup"></div>
-                    </div>
-                    <div class="grid gap-4">
-                        <div><img class="h-auto max-w-full rounded-lg hover:scale-105 transition-transform" src="https://placehold.co/500x700/1F2937/4B5563?text=Bedroom+TV" alt="Bedroom TV installation"></div>
-                        <div><img class="h-auto max-w-full rounded-lg hover:scale-105 transition-transform" src="https://placehold.co/500x400/1F2937/4B5563?text=Soundbar+Setup" alt="TV with a mounted soundbar"></div>
-                    </div>
-                     <div class="grid gap-4">
-                        <div><img class="h-auto max-w-full rounded-lg hover:scale-105 transition-transform" src="https://placehold.co/500x400/1F2937/4B5563?text=Office+Display" alt="Commercial display in an office"></div>
-                        <div><img class="h-auto max-w-full rounded-lg hover:scale-105 transition-transform" src="https://placehold.co/500x700/1F2937/4B5563?text=Tight+Corner" alt="TV mounted in a tight corner"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20">
-            <div class="container mx-auto px-6 text-center">
-                <h3 class="text-3xl md:text-4xl font-bold">Ready for a Perfect TV Setup?</h3>
-                <p class="text-gray-400 mt-2 mb-8 max-w-2xl mx-auto">Contact us today to schedule your professional installation. We're ready to help you get the best viewing experience possible.</p>
-                <a href="mailto:contact@sbtvinstalls.com" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform hover:scale-105 inline-block glow-effect">Book Your Installation</a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 border-t border-gray-700">
-        <div class="container mx-auto px-6 py-6 text-center text-gray-400">
-            <p>© 2024 SBTV Installs. All Rights Reserved.</p>
+    <footer class="bg-gray-900 border-t border-gray-700 py-6">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 SBTV Installs. All Rights Reserved.</p>
+            <p>Moreno Valley, California</p>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('quote-form');
+            const tvSizeSelect = document.getElementById('tv-size');
+            const wallTypeSelect = document.getElementById('wall-type');
+            const addons = document.querySelectorAll('.addon');
+            const totalPriceEl = document.getElementById('total-price');
+            const estimatedPriceInput = document.getElementById('estimated_price');
 
-        // Instant Quote Logic
+            function updatePrice() {
+                let total = 0;
+                
+                // Base price from TV size
+                total += parseInt(tvSizeSelect.value, 10);
+                
+                // Add cost for wall type
+                total += parseInt(wallTypeSelect.value, 10);
+                
+                // Add cost for selected add-ons
+                addons.forEach(addon => {
+                    if (addon.checked) {
+                        total += parseInt(addon.dataset.cost, 10);
+                    }
+                });
+                
+                const formattedPrice = `$${total}`;
+                totalPriceEl.textContent = formattedPrice;
+                estimatedPriceInput.value = formattedPrice;
+            }
+
+            // Add event listeners to all form elements that affect the price
+            tvSizeSelect.addEventListener('change', updatePrice);
+            wallTypeSelect.addEventListener('change', updatePrice);
+            addons.forEach(addon => {
+                addon.addEventListener('change', updatePrice);
+            });
+
+            // Initial calculation on page load
+            updatePrice();
+        });
+    </script>
+
+</body>
+</html>
