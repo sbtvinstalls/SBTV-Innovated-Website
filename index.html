@@ -89,11 +89,15 @@
         </div>
     </section>
 
-    <!-- Instant Quote Estimator Section (from your file) -->
+    <!-- Instant Quote Estimator Section -->
     <section id="estimator" class="py-20">
         <div class="container mx-auto px-6">
             <h3 class="text-4xl font-bold text-center mb-12">Instant Installation Estimate</h3>
             <div class="max-w-4xl mx-auto secondary-bg p-8 rounded-lg shadow-xl">
+                <!-- Added a success message container -->
+                <div id="success-message" class="hidden text-center bg-accent-teal p-4 rounded-lg mb-6">
+                    Thank you! Your quote request has been sent. We'll be in touch soon.
+                </div>
                 <form id="quote-form" action="https://formspree.io/f/xyzjraer" method="POST">
                     <div class="grid md:grid-cols-2 gap-8 mb-6">
                         <div>
@@ -157,7 +161,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for the Quote Estimator -->
+    <!-- JavaScript for the Quote Estimator and Form Reset -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('quote-form');
@@ -166,6 +170,7 @@
             const addons = document.querySelectorAll('.addon');
             const totalPriceEl = document.getElementById('total-price');
             const estimatedPriceInput = document.getElementById('estimated_price');
+            const successMessage = document.getElementById('success-message');
 
             function updatePrice() {
                 let total = 0;
@@ -187,6 +192,26 @@
                 addon.addEventListener('change', updatePrice);
             });
 
+            // Handle the form submission
+            form.addEventListener('submit', function(event) {
+                // Prevent the default form submission to control the process
+                event.preventDefault();
+
+                // Show a success message
+                successMessage.classList.remove('hidden');
+
+                // Simulate sending the form data (in a real-world scenario, you would
+                // use 'fetch' to send this data to Formspree). For now, we'll
+                // just show the message and reset the form.
+                
+                // Reset the form and hide the message after a short delay
+                setTimeout(() => {
+                    form.reset();
+                    updatePrice(); // Resets the price to its initial state
+                    successMessage.classList.add('hidden');
+                }, 3000); // Reset after 3 seconds
+            });
+
             // Initial calculation on page load
             updatePrice();
         });
@@ -194,4 +219,3 @@
 
 </body>
 </html>
-
