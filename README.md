@@ -1,9 +1,43 @@
-This is the official repository for the SBTV company website, a professional service specializing in TV mounting and installation. The site is designed to be modern, user-friendly, and responsive on all devices.
-Website Features
+# SBTV Installs - Instant Quote Landing Page
 
--   **Professional Homepage:** A clean and welcoming landing page to attract new clients.
--   **Services Display:** Clearly outlines the different installation services offered.
--   **Instant Quote Calculator:** An interactive tool that allows potential customers to get an instant price estimate based on TV size, mount type, and additional services like wire concealment.
--   **Our Installation Process:** A step-by-step visual guide that explains the installation process from consultation to cleanup, building customer trust.
--   **Contact Information:** Easy-to-find contact details to help clients get in touch.
--   **Fully Responsive Design:** Looks great and works perfectly on desktops, tablets, and mobile phones.
+This repository contains the source code for the official SBTV Installations lead-generation landing page. This is a modern, single-page application designed to convert visitors into qualified leads by providing an instant, interactive price estimate for TV mounting services.
+
+The page is built to be fast, responsive, and easy to maintain.
+
+---
+
+## ✨ Key Features
+
+* **Instant Quote Estimator:** A dynamic calculator built with JavaScript that allows potential customers to get a real-time price estimate based on their specific needs (TV size, wall type, add-ons).
+* **Portfolio Gallery:** A responsive three-column grid that showcases recent installation work, building trust and social proof.
+* **Contact Form Integration:** The form captures lead information (name, email, estimated price) and sends it directly to your inbox using Formspree.
+* **Fully Responsive:** The design is optimized for a seamless experience on all devices, from mobile phones to desktop computers.
+
+---
+
+## 🛠️ Tech Stack
+
+* **HTML5:** For the core structure and content of the page.
+* **Tailwind CSS:** A utility-first CSS framework used for rapid, modern UI development. It is linked via a CDN, so no local installation is required.
+* **JavaScript:** Powers the interactive quote calculator and all client-side dynamic functionality.
+
+---
+
+## 🚀 Deployment
+
+This project is hosted for free using **GitHub Pages**.
+
+The live site is automatically deployed from the `main` branch of this repository. The public URL is:
+**`https://your-username.github.io/`** (replace `your-username` with your actual GitHub username).
+
+---
+
+## ✏️ How to Update
+
+All content for the website is contained within the `index.html` file.
+
+To make simple text or image changes:
+1.  Click on the `index.html` file in the repository.
+2.  Click the **pencil icon** (✏️) in the top-right corner to edit the file.
+3.  Make your desired changes directly in the editor.
+4.  Scroll to the bottom and click the **"Commit changes"** button to save and publish your updates.
