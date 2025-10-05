@@ -28,7 +28,7 @@
 </head>
 <body class="bg-gray-900 text-white">
 
-    <header class="hero-bg shadow-lg">
+    <header class="hero-bg shadow-lg sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-3xl font-bold">SBTV Installs</h1>
             <ul class="flex items-center space-x-6">
@@ -43,8 +43,9 @@
     <section class="hero-bg py-20 text-center">
         <div class="container mx-auto px-6">
             <h2 class="text-5xl font-bold mb-4">Flawless TV Mounting, Professional Results.</h2>
-            <p class="text-xl text-gray-300 mb-8">Serving Moreno Valley with fast, reliable, and clean installations.</p>
+            <p class="text-xl text-gray-300 mb-8">Serving the Inland Empire with fast, reliable, and clean installations.</p>
             <a href="#estimator" class="bg-accent-orange text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-accent-orange-hover transition-transform transform hover:scale-105">Get Your Instant Quote</a>
+            <p class="text-green-400 mt-4 text-lg">✅ Lifetime Warranty on All Parts & Labor</p>
         </div>
     </section>
 
@@ -72,17 +73,14 @@
         <div class="container mx-auto px-6 text-center">
             <h3 class="text-4xl font-bold mb-12">Our Recent Work: Flawless Finish Guaranteed</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-                <img src=""
-                     alt="Professional TV mounting with hidden wires in a bedroom. The perfect finish."
+                <img src="https://images.pexels.com/photos/6976094/pexels-photo-6976094.jpeg"
+                     alt="Professional TV mounting with hidden wires in a modern living room."
                      class="rounded-lg shadow-xl h-64 w-full object-cover hover:scale-105 transition-transform duration-300">
-
-                <img src=""
-                     alt="Detailed view of the TV mount's clean edge and professional installation."
+                <img src="https://images.pexels.com/photos/7045638/pexels-photo-7045638.jpeg"
+                     alt="Detailed view of a clean TV and soundbar installation."
                      class="rounded-lg shadow-xl h-64 w-full object-cover hover:scale-105 transition-transform duration-300">
-
-                <img src=""
-                     alt="Technical shot showing in-wall wire concealment for a clean look."
+                <img src="https://images.pexels.com/photos/5774149/pexels-photo-5774149.jpeg"
+                     alt="Wide view of an entertainment center showcasing a clean, wire-free setup."
                      class="rounded-lg shadow-xl h-64 w-full object-cover hover:scale-105 transition-transform duration-300">
             </div>
         </div>
@@ -99,9 +97,19 @@
                             <div class="mb-4">
                                 <label for="tv-size" class="block text-lg mb-2">TV Size:</label>
                                 <select id="tv-size" name="tv_size" class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-accent-orange">
-                                    <option value="100">Up to 55"</option>
-                                    <option value="125">56" - 75"</option>
-                                    <option value="150">76" and larger</option>
+                                    <option value="0">Up to 55"</option>
+                                    <option value="20">56" - 75"</option>
+                                    <option value="40">76" and larger</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="mount-choice" class="block text-lg mb-2">Choose Your Mount:</label>
+                                <select id="mount-choice" name="mount_choice" class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-accent-orange">
+                                    <option value="0">I Have My Own Mount (Complete)</option>
+                                    <option value="15">I Have My Own Mount (Incomplete Hardware)</option>
+                                    <option value="25">Provide Standard Tilt Mount</option>
+                                    <option value="50">Provide Single Arm Full Motion Mount</option>
+                                    <option value="75">Provide Full Motion Swivel Mount</option>
                                 </select>
                             </div>
                             <div class="mb-4">
@@ -121,8 +129,8 @@
                         </div>
                         <div class="bg-gray-900 p-6 rounded-lg flex flex-col items-center justify-center text-center">
                             <h4 class="text-2xl font-semibold mb-4">Your Estimated Price</h4>
-                            <p class="text-6xl font-bold accent-orange" id="total-price">$100</p>
-                            <p class="text-gray-400 mt-2">Final price confirmed on-site.</p>
+                            <p class="text-6xl font-bold accent-orange" id="total-price">$80</p>
+                            <p class="text-gray-400 mt-2">Starts with $80 Base Installation</p>
                         </div>
                     </div>
                     <div id="contact" class="mt-10 border-t border-gray-600 pt-6">
@@ -132,7 +140,7 @@
                            <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-accent-orange">
                         </div>
                         <textarea name="message" placeholder="Any additional details? (optional)" rows="4" class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-accent-orange"></textarea>
-                        <input type="hidden" id="estimated_price" name="estimated_price" value="$100">
+                        <input type="hidden" id="estimated_price" name="estimated_price" value="$80">
                         <button type="submit" class="w-full mt-6 bg-accent-orange text-white text-lg font-semibold py-3 rounded-lg hover:bg-accent-orange-hover transition">Submit Quote Request</button>
                     </div>
                 </form>
@@ -140,38 +148,54 @@
         </div>
     </section>
 
+    <section id="testimonials" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold mb-12">What Our Customers Say</h3>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-gray-900 p-8 rounded-lg">
+                    <p class="text-xl italic text-gray-300">"The team was fast, professional, and the final result is flawless. They hid all the wires and treated my home with respect. Worth every penny. Highly recommended!"</p>
+                    <p class="mt-4 text-lg font-bold accent-orange">- David R., Moreno Valley</p>
+                    <p class="text-yellow-400 text-2xl mt-2">★★★★★</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-gray-900 border-t border-gray-700 py-6">
         <div class="container mx-auto px-6 text-center text-gray-400">
-            <p>© 2025 SBTV Installs. All Rights Reserved.</p>
+            <p>&copy; 2025 SBTV Installs. All Rights Reserved.</p>
             <p>Moreno Valley, California</p>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('quote-form');
             const tvSizeSelect = document.getElementById('tv-size');
+            const mountChoiceSelect = document.getElementById('mount-choice'); // New mount select element
             const wallTypeSelect = document.getElementById('wall-type');
             const addons = document.querySelectorAll('.addon');
             const totalPriceEl = document.getElementById('total-price');
             const estimatedPriceInput = document.getElementById('estimated_price');
 
             function updatePrice() {
-                let total = 0;
+                let total = 80; // Base installation price
 
-                // Base price from TV size
+                // Add cost from TV size
                 total += parseInt(tvSizeSelect.value, 10);
-
+                
+                // Add cost from Mount Choice
+                total += parseInt(mountChoiceSelect.value, 10);
+                
                 // Add cost for wall type
                 total += parseInt(wallTypeSelect.value, 10);
-
+                
                 // Add cost for selected add-ons
                 addons.forEach(addon => {
                     if (addon.checked) {
                         total += parseInt(addon.dataset.cost, 10);
                     }
                 });
-
+                
                 const formattedPrice = `$${total}`;
                 totalPriceEl.textContent = formattedPrice;
                 estimatedPriceInput.value = formattedPrice;
@@ -179,10 +203,10 @@
 
             // Add event listeners to all form elements that affect the price
             tvSizeSelect.addEventListener('change', updatePrice);
+            mountChoiceSelect.addEventListener('change', updatePrice); // Event listener for new mount select
             wallTypeSelect.addEventListener('change', updatePrice);
             addons.forEach(addon => {
-           
-     addon.addEventListener('change', updatePrice);
+                addon.addEventListener('change', updatePrice);
             });
 
             // Initial calculation on page load
@@ -192,4 +216,3 @@
 
 </body>
 </html>
-
