@@ -73,14 +73,14 @@
         <div class="container mx-auto px-6 text-center">
             <h3 class="text-4xl font-bold mb-12">Our Recent Work: Flawless Finish Guaranteed</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <img src="https://images.pexels.com/photos/6976094/pexels-photo-6976094.jpeg"
-                     alt="Professional TV mounting with hidden wires in a modern living room."
+                <img src="https://i.imgur.com/z9hBFhU.jpeg"
+                     alt="Flawless TV installation above a custom wainscoting wall."
                      class="rounded-lg shadow-xl h-64 w-full object-cover hover:scale-105 transition-transform duration-300">
-                <img src="https://images.pexels.com/photos/7045638/pexels-photo-7045638.jpeg"
-                     alt="Detailed view of a clean TV and soundbar installation."
+                <img src="https://i.imgur.com/8QpA1fI.jpeg"
+                     alt="A level showing the precision and accuracy of our TV mount installation."
                      class="rounded-lg shadow-xl h-64 w-full object-cover hover:scale-105 transition-transform duration-300">
-                <img src="https://images.pexels.com/photos/5774149/pexels-photo-5774149.jpeg"
-                     alt="Wide view of an entertainment center showcasing a clean, wire-free setup."
+                <img src="https://i.imgur.com/V9n8a8r.jpeg"
+                     alt="A securely installed TV bracket ready for the television."
                      class="rounded-lg shadow-xl h-64 w-full object-cover hover:scale-105 transition-transform duration-300">
             </div>
         </div>
@@ -171,7 +171,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const tvSizeSelect = document.getElementById('tv-size');
-            const mountChoiceSelect = document.getElementById('mount-choice'); // New mount select element
+            const mountChoiceSelect = document.getElementById('mount-choice');
             const wallTypeSelect = document.getElementById('wall-type');
             const addons = document.querySelectorAll('.addon');
             const totalPriceEl = document.getElementById('total-price');
@@ -180,16 +180,10 @@
             function updatePrice() {
                 let total = 80; // Base installation price
 
-                // Add cost from TV size
                 total += parseInt(tvSizeSelect.value, 10);
-                
-                // Add cost from Mount Choice
                 total += parseInt(mountChoiceSelect.value, 10);
-                
-                // Add cost for wall type
                 total += parseInt(wallTypeSelect.value, 10);
                 
-                // Add cost for selected add-ons
                 addons.forEach(addon => {
                     if (addon.checked) {
                         total += parseInt(addon.dataset.cost, 10);
@@ -201,15 +195,13 @@
                 estimatedPriceInput.value = formattedPrice;
             }
 
-            // Add event listeners to all form elements that affect the price
             tvSizeSelect.addEventListener('change', updatePrice);
-            mountChoiceSelect.addEventListener('change', updatePrice); // Event listener for new mount select
+            mountChoiceSelect.addEventListener('change', updatePrice);
             wallTypeSelect.addEventListener('change', updatePrice);
             addons.forEach(addon => {
                 addon.addEventListener('change', updatePrice);
             });
 
-            // Initial calculation on page load
             updatePrice();
         });
     </script>
